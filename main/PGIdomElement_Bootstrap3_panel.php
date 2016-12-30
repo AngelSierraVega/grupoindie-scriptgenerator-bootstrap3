@@ -30,11 +30,11 @@ class PGIdomElement_Bootstrap3_panel extends PGIdomElement_Bootstrap3 {
     private $_panelHeading = NULL;
     private $_panelBody = NULL;
     private $_panelClass = NULL;
-    function __construct($title,$class="default") {
+    function __construct($title,$context="default") {
         try {
             parent::__construct("div");
             $this->PGIpushClass("panel");
-            $this->_panelClass = "panel-$class";
+            $this->_panelClass = "panel-$context";
             $this->PGIpushClass($this->_panelClass);
             $panelHeading = new PGIdomElement_Bootstrap3_panelHeading($title);
             $this->_panelHeading = &$panelHeading;
