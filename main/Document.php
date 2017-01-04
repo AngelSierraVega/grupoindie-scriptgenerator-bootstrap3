@@ -30,9 +30,7 @@ class Document extends \GIndie\DML\HTML5\Document {
     public function __construct($title, $lang = "en") {
         try {
             parent::__construct($title, $lang, $doctype = "html", $charset = "UTF-8");
-            
-            
-            $this->addContent(\GIndie\DML\HTML5\Factory::Simple("base", ["target"=>"_parent"]));
+            //$this->addContent(\GIndie\DML\HTML5\Factory::Simple("base", ["target"=>"target_loader"]));
             
             $this->addMeta(["http-equiv"=>"X-UA-Compatible","content"=>"IE=edge"]);
             $this->addMeta(["name"=>"viewport","content"=>"width=device-width, initial-scale=1"]);

@@ -17,12 +17,18 @@ $document = GIndie\DML\Bootstrap3\Factory::Document("Bootstrap TEST");
 
 //$example = GIndie\DML\HTML5\Factory::Empty_("input") ;
 //$document->addContent($example. " || " . "<input />");
-$document->addContent(GIndie\DML\HTML5\Factory::Div([
-            GIndie\DML\HTML5\Factory::Span([
-                GIndie\DML\HTML5\Factory::Anchor("https:\\www.facebook.com", "link", "_blank")
-            ])
-]));
+//$document->addContent(GIndie\DML\HTML5\Factory::Div([
+//            GIndie\DML\HTML5\Factory::Span([
+//                GIndie\DML\HTML5\Factory::Anchor("https:\\www.facebook.com", "link", "_blank")
+//            ])
+//]));
+
+$example = new GIndie\DML\Bootstrap3\Dropdown("TEST", ["TEST1","TEST2","TEST3"]);
+$document->addContent($example);
+
 echo $document;
+
+
 
 function displayError(Exception $e) {
     print($e->getTraceAsString() . "</br>" . $e->getMessage());
