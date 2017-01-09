@@ -39,10 +39,13 @@ class Dropdown extends \GIndie\DML\HTML5\Node {
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-04
      */
-    public function __construct($name, array $listElements) {
+    public function __construct($name, array $listElements,$customToggleTag = null) {
         try {
             parent::__construct("div", false, ["class" => "dropdown"]);
             $this->_toggle = $this->addContent(new Dropdown\Toggle($name));
+            if($customToggleTag !== null){
+                $this->_toggle->setTag($customToggleTag);
+            }
             $this->_menu = $this->addContent(\GIndie\DML\HTML5\List_::Unordered($listElements));
             $this->_menu->setAttribute("class", "dropdown-menu");
         } catch (Exception $e) {

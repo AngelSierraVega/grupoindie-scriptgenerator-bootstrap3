@@ -39,6 +39,10 @@ class Document extends \GIndie\DML\HTML5\Document {
             $_css->setAttribute("integrity","sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u");
             $_css->setAttribute("crossorigin","anonymous");
             
+            $theme = $this->addLink("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css", "stylesheet");
+            $theme->setAttribute("integrity","sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp");
+            $theme->setAttribute("crossorigin","anonymous");
+            
             $this->addScript("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js", true);
             
             $_js = $this->addScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", true);
