@@ -23,8 +23,20 @@ $document = GIndie\DML\Bootstrap3\Factory::Document("Bootstrap TEST");
 //            ])
 //]));
 
-$example = new GIndie\DML\Bootstrap3\Dropdown("TEST", ["TEST1","TEST2","TEST3"]);
+//$example = new GIndie\DML\Bootstrap3\Dropdown("TEST", ["TEST1","TEST2","TEST3"]);
+//$document->addContent($example);
+
+
+$example = new GIndie\DML\Bootstrap3\Modal\Content("modal title", "this is the content");
 $document->addContent($example);
+
+
+
+
+
+
+
+
 
 echo $document;
 
