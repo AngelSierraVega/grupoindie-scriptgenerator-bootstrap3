@@ -8,40 +8,21 @@
  * as published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
  */
-//require_once '../GI_DML_Node/main/Node.php';
-//require_once 'main.php';
-require_once __DIR__ . '/main.php';
-
-$document = GIndie\DML\Bootstrap3\Factory::Document("Bootstrap TEST");
-
-
-//$example = GIndie\DML\HTML5\Factory::Empty_("input") ;
-//$document->addContent($example. " || " . "<input />");
-//$document->addContent(GIndie\DML\HTML5\Factory::Div([
-//            GIndie\DML\HTML5\Factory::Span([
-//                GIndie\DML\HTML5\Factory::Anchor("https:\\www.facebook.com", "link", "_blank")
-//            ])
-//]));
-
-//$example = new GIndie\DML\Bootstrap3\Dropdown("TEST", ["TEST1","TEST2","TEST3"]);
-//$document->addContent($example);
-
-
-$example = new GIndie\DML\Bootstrap3\Modal\Content("modal title", "this is the content");
-$document->addContent($example);
 
 
 
+require_once '/../DML/src/main.php';
+require_once '/../HTML5/src/main.php';
+require_once '/../HTML5form/src/main.php';
 
+require_once 'src/main.php';
+try {
+    $document = GIgenerator\DML\HTML5\Bootstrap3\Factory::Document("Bootstrap TEST");
 
+//    $example = new GIgenerator\DML\HTML5\Bootstrap3\Modal\Content("modal title", "this is the content");
+//    $document->addContent($example);
 
-
-
-
-echo $document;
-
-
-
-function displayError(Exception $e) {
+    echo $document;
+} catch (Exception $e) {
     print($e->getTraceAsString() . "</br>" . $e->getMessage());
 }

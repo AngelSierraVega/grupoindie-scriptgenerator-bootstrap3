@@ -17,59 +17,76 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+namespace GIgenerator\DML\HTML5\Bootstrap3;
+
+
+class Button extends \GIgenerator\DML\HTML5\FormInput\Button {
+
+    use ContextualColors;
+
+    //protected $base
+    public function __construct($content = null, $type = 0) {
+        parent::__construct($content, $type);
+        $this->baseClass = "btn";
+        $this->addClass($this->baseClass);
+        $this->setContext(static::$COLOR_DEFAULT, false);
+    }
+
+}
+
 /**
  * Description of PGIdomElement_Bootstrap3_button
  *
  * @author Angel
  */
-class PGIdomElement_Bootstrap3_button extends PGIdomElement_Bootstrap3 {
-    
-    public static function buttonInfo($href,$label=null){
-        $rtnButton = new PGIdomElement_Bootstrap3_button($href,  PGIdomElement_Bootstrap3_icon::iconInfo(),$label,$class="default");
+class PGIdomElement_Bootstrap3_buttonDEPREACATED {
+
+    public static function buttonInfo($href, $label = null) {
+        $rtnButton = new PGIdomElement_Bootstrap3_button($href, PGIdomElement_Bootstrap3_icon::iconInfo(), $label, $class = "default");
         //$rtnButton->PGIpushClass("btn-info");
         $rtnButton->PGIpushClass("getModal-button");
         return $rtnButton;
     }
-    
-    public static function buttonEdit($href,$label=null){
-        $rtnButton = new PGIdomElement_Bootstrap3_button($href,  PGIdomElement_Bootstrap3_icon::iconEdit(),$label,$class="success");
+
+    public static function buttonEdit($href, $label = null) {
+        $rtnButton = new PGIdomElement_Bootstrap3_button($href, PGIdomElement_Bootstrap3_icon::iconEdit(), $label, $class = "success");
         $rtnButton->PGIpushClass("getModal-button");
         return $rtnButton;
     }
-    
-    public static function buttonTrash($href,$label=null){
-        $rtnButton = new PGIdomElement_Bootstrap3_button($href,  PGIdomElement_Bootstrap3_icon::iconDelete(),$label,$class="danger");
+
+    public static function buttonTrash($href, $label = null) {
+        $rtnButton = new PGIdomElement_Bootstrap3_button($href, PGIdomElement_Bootstrap3_icon::iconDelete(), $label, $class = "danger");
         $rtnButton->PGIpushClass("getModal-button");
         return $rtnButton;
     }
-    
-    public static function buttonCreate($href,$label=null){
-        $rtnButton = new PGIdomElement_Bootstrap3_button($href,  PGIdomElement_Bootstrap3_icon::iconPlus(),$label,$class="success");
+
+    public static function buttonCreate($href, $label = null) {
+        $rtnButton = new PGIdomElement_Bootstrap3_button($href, PGIdomElement_Bootstrap3_icon::iconPlus(), $label, $class = "success");
         $rtnButton->PGIpushClass("getModal-button");
         return $rtnButton;
     }
-    
-    public static function buttonHide($href,$label=null){
-        $rtnButton = new PGIdomElement_Bootstrap3_button($href,  PGIdomElement_Bootstrap3_icon::iconEyeOpen(),$label,$class="success");
+
+    public static function buttonHide($href, $label = null) {
+        $rtnButton = new PGIdomElement_Bootstrap3_button($href, PGIdomElement_Bootstrap3_icon::iconEyeOpen(), $label, $class = "success");
         $rtnButton->PGIpushClass("getModal-button");
         return $rtnButton;
     }
-    
-    public static function buttonShow($href,$label=null){
-        $rtnButton = new PGIdomElement_Bootstrap3_button($href,  PGIdomElement_Bootstrap3_icon::iconEyeClosed(),$label,$class="default");
+
+    public static function buttonShow($href, $label = null) {
+        $rtnButton = new PGIdomElement_Bootstrap3_button($href, PGIdomElement_Bootstrap3_icon::iconEyeClosed(), $label, $class = "default");
         $rtnButton->PGIpushClass("getModal-button");
         return $rtnButton;
     }
-    
-    public static function buttonEnvelope($href,$label=null){
-        $rtnButton = new PGIdomElement_Bootstrap3_button($href,  PGIdomElement_Bootstrap3_icon::iconEnvelope(),$label,$class="success");
+
+    public static function buttonEnvelope($href, $label = null) {
+        $rtnButton = new PGIdomElement_Bootstrap3_button($href, PGIdomElement_Bootstrap3_icon::iconEnvelope(), $label, $class = "success");
         $rtnButton->PGIpushClass("getModal-button");
         return $rtnButton;
     }
-    
-    public static function buttonPrint($href,$label=null,$getModal=false){
-        $rtnButton = new PGIdomElement_Bootstrap3_button($href,  PGIdomElement_Bootstrap3_icon::iconPrint(),$label,$class="success");
-        if($getModal){
+
+    public static function buttonPrint($href, $label = null, $getModal = false) {
+        $rtnButton = new PGIdomElement_Bootstrap3_button($href, PGIdomElement_Bootstrap3_icon::iconPrint(), $label, $class = "success");
+        if ($getModal) {
             $rtnButton->PGIpushClass("getModal-button");
         }
         return $rtnButton;

@@ -9,7 +9,7 @@
  * version 3 of the License, or (at your option) any later version.
  */
 
-namespace GIndie\DML\Bootstrap3;
+namespace GIgenerator\DML\HTML5\Bootstrap3;
 
 /**
  * 
@@ -17,7 +17,7 @@ namespace GIndie\DML\Bootstrap3;
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-04
  */
-class Dropdown extends \GIndie\DML\HTML5\Node {
+class Dropdown extends \GIgenerator\DML\HTML5\StylesSemantics\Div {
 
     /**
      *
@@ -39,18 +39,16 @@ class Dropdown extends \GIndie\DML\HTML5\Node {
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-04
      */
-    public function __construct($name, array $listElements,$customToggleTag = null) {
-        try {
-            parent::__construct("div", false, ["class" => "dropdown"]);
-            $this->_toggle = $this->addContent(new Dropdown\Toggle($name));
-            if($customToggleTag !== null){
-                $this->_toggle->setTag($customToggleTag);
-            }
-            $this->_menu = $this->addContent(\GIndie\DML\HTML5\List_::Unordered($listElements));
-            $this->_menu->setAttribute("class", "dropdown-menu");
-        } catch (Exception $e) {
-            displayError($e);
+    public function __construct($brand, array $listElements, $customToggleTag = null) {
+        //parent::__construct("div", false, );
+        parent::__construct([]);
+        $this->addClass("dropdown");
+        $this->_toggle = $this->addContent(new Dropdown\Toggle($brand));
+        if ($customToggleTag !== null) {
+            $this->_toggle->setTag($customToggleTag);
         }
+        $this->_menu = $this->addContent(\GIgenerator\DML\HTML5\Lists::Unordered($listElements));
+        $this->_menu->setAttribute("class", "dropdown-menu");
     }
 
     /**
@@ -63,7 +61,7 @@ class Dropdown extends \GIndie\DML\HTML5\Node {
      */
     public function addListElement($element) {
         try {
-           return $this->_menu->addListElement($element); 
+            return $this->_menu->addListElement($element);
         } catch (Exception $e) {
             displayError($e);
         }
@@ -71,7 +69,7 @@ class Dropdown extends \GIndie\DML\HTML5\Node {
 
 }
 
-namespace GIndie\DML\Bootstrap3\Dropdown;
+namespace GIgenerator\DML\HTML5\Bootstrap3\Dropdown;
 
 /**
  * 
@@ -79,7 +77,7 @@ namespace GIndie\DML\Bootstrap3\Dropdown;
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-04
  */
-class Toggle extends \GIndie\DML\HTML5\BuildingBlocks\Span {
+class Toggle extends \GIgenerator\DML\HTML5\StylesSemantics\Span {
 
     /**
      * 
@@ -89,18 +87,14 @@ class Toggle extends \GIndie\DML\HTML5\BuildingBlocks\Span {
      * @since 2017-01-04
      */
     public function __construct($content) {
-        try {
-            $attributes = ["class" => "dropdown-toggle"];
-            $attributes["data-toggle"] = "dropdown";
-            $attributes["role"] = "button";
-            $attributes["aria-haspopup"] = "true";
-            $attributes["aria-expanded"] = "false";
-            parent::__construct($attributes, [$content]);
-            $this->addContent(" ");
-            $this->addContent(new \GIndie\DML\HTML5\BuildingBlocks\Span(["class" => "caret"]));
-        } catch (Exception $e) {
-            displayError($e);
-        }
+        $attributes = ["class" => "dropdown-toggle"];
+        $attributes["data-toggle"] = "dropdown";
+        $attributes["role"] = "button";
+        $attributes["aria-haspopup"] = "true";
+        $attributes["aria-expanded"] = "false";
+        parent::__construct([$content], $attributes);
+        $this->addContent(" ");
+        $this->addContent(new \GIgenerator\DML\HTML5\StylesSemantics\Span([], ["class" => "caret"]));
     }
 
 }
