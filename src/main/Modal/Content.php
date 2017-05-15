@@ -188,7 +188,7 @@ class Footer extends \GIgenerator\DML\HTML5\Node {
         if ($btnDismiss) {
             //$btnDismiss = \GIgenerator\DML\HTML5\Bootstrap3\Factory::Button($content, 0);
             //$btnDismiss = new \GIgenerator\DML\HTML5\Bootstrap3\Button($content, $type);
-            $btnDismiss = new Bootstrap3\Button("Cerrar", Bootstrap3\Button::$TYPE_BUTTON);
+            $btnDismiss = new Bootstrap3\Button("Cerrar", Bootstrap3\Button::TYPE_BUTTON);
             $btnDismiss->setAttribute("data-dismiss", "modal");
             //$btnDismiss->addClass();
 //                \GIgenerator\DML\HTML5\FormInput\Button("Cerrar", [

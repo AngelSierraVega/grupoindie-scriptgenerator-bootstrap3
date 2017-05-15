@@ -77,6 +77,7 @@ trait ContextualBackgrounds {
 require_once __DIR__ . '/main/Button.php';
 require_once __DIR__ . '/main/Dropdown.php';
 require_once __DIR__ . '/main/Modal.php';
+require_once __DIR__ . '/main/Panel.php';
 require_once __DIR__ . '/main/Document.php';
 
 class Factory {
