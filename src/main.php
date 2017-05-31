@@ -1,22 +1,44 @@
 <?php
 
-/*
- * Copyright (C) 2016 Angel Sierra Vega. Grupo INDIE.
+/**
+ * GIG-DML-HTML5-Bootstrap3 - Document 2016-12-28
+ * @copyright (C) 2017 Angel Sierra Vega. Grupo INDIE.
  *
- * This software is protected under GNU: you can use, study and modify it
- * but not distribute it under the terms of the GNU General Public License 
- * as published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
+ * @package Bootstrap3
+ *
+ * @version GIG-BTSP3.00.01
  */
 
-namespace GIgenerator\DML\HTML5\Bootstrap3;
+namespace GIndie\Generator\DML\HTML5\Bootstrap3;
 
+spl_autoload_register(function($className) {
+    if (substr($className, -4) == 'Test') {
+        $className = substr($className, 0, \strrpos($className, "Test"));
+    }
+    $edited = substr($className,
+            strlen(__NAMESPACE__) + strrpos($className, __NAMESPACE__));
+    $edited = str_replace("\\", \DIRECTORY_SEPARATOR, __DIR__ . $edited) . ".php";
+    if (is_readable($edited)) {
+        require_once($edited);
+    }
+});
+
+/**
+ * 
+ */
 trait BootstrapClass {
 
+    /**
+     *
+     * @var type 
+     */
     protected $baseClass;
 
 }
 
+/**
+ * 
+ */
 trait ContextualColors {
 
     public static $COLOR_DEFAULT = "default";
@@ -29,8 +51,10 @@ trait ContextualColors {
 
     use BootstrapClass;
 
-    public function setContext($context, $removeContext = true) {
+    public function setContext($context, $removeContext = \TRUE) {
+
         if ($this->baseClass) {
+            //var_dump($this);
             if ($removeContext) {
                 $this->removeClass($this->baseClass . "-" . static::$COLOR_DANGER);
                 $this->removeClass($this->baseClass . "-" . static::$COLOR_DEFAULT);
@@ -49,6 +73,9 @@ trait ContextualColors {
 
 }
 
+/**
+ * 
+ */
 trait ContextualBackgrounds {
 
     public static $BKGRND_PRIMARY = "primary";
@@ -71,27 +98,24 @@ trait ContextualBackgrounds {
 
 }
 
-//require_once __DIR__ . '/../HTML5/dist/HTML5.phar';
-//require_once __DIR__ . '/../GI_DML_HTML5/main.php';
-//require_once __DIR__ .'/main/Node.php';
-require_once __DIR__ . '/main/Button.php';
-require_once __DIR__ . '/main/Dropdown.php';
-require_once __DIR__ . '/main/Modal.php';
-require_once __DIR__ . '/main/Panel.php';
-require_once __DIR__ . '/main/Document.php';
-
+/**
+ * 
+ */
 class Factory {
 
-    public static function Document($title, $lang = "en", $doctype = 'html', $charset = 'UTF-8') {
+    public static function Document($title, $lang = "en", $doctype = 'html',
+            $charset = 'UTF-8') {
         return new Document($title, $lang);
     }
 
     public static function Hyperlink($link, $content, $target = NULL) {
-        return new \GIgenerator\DML\HTML5\Links\Hyperlink($link, $content, $target);
+        return new \GIndie\Generator\DML\HTML5\Category\Links\Hyperlink($link,
+                $content, $target);
     }
-    
+
     public static function Button($content = null, $type = 0) {
-        return new GIgenerator\DML\HTML5\Bootstrap3\Button($content = null, $type = 0);
+        return new GIgenerator\DML\HTML5\Bootstrap3\Button($content = null,
+                $type = 0);
     }
 
 }

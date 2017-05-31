@@ -1,0 +1,15 @@
+<#assign licenseFirst = "/**">
+<#assign licensePrefix = " * ">
+<#assign licenseLast = " */">
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}${project.displayName} - ${name} ${date?date?string("yyyy-MM-dd")}
+${licensePrefix}@copyright (C) ${date?date?string("yyyy")} Angel Sierra Vega. Grupo INDIE.
+${licensePrefix?replace(" +$", "", "r")}
+${licensePrefix}@package Bootstrap3
+${licensePrefix?replace(" +$", "", "r")}
+${licensePrefix}@version GIG-BTSP3.00.00
+<#if licenseLast??>
+${licenseLast}
+</#if>

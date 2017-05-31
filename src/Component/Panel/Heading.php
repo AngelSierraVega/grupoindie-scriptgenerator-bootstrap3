@@ -1,0 +1,120 @@
+<?php
+
+/*
+ * Copyright (C) 2017 Angel Sierra Vega. Grupo INDIE.
+ *
+ * This software is protected under GNU: you can use, study and modify it
+ * but not distribute it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ */
+
+namespace GIndie\Generator\DML\HTML5\Bootstrap3\Component\Panel;
+
+use GIndie\Generator\DML\HTML5\Category\Basic;
+use GIndie\Generator\DML\HTML5\Category\StylesSemantics\Div;
+
+/**
+ * The heading of the panel component.
+ * 
+ * @package     Bootstrap3
+ * @category    ComponentLibs
+ * 
+ * @copyright   (c) 2017 Angel Sierra Vega. Grupo INDIE.
+ *
+ * @version     GIG-BTSP3.00.01
+ * @since       2017-05-20
+ * @author      Angel Sierra Vega <angel.sierra@grupoindie.com>
+ * 
+ */
+class Heading extends Div {
+
+    private $_title;
+
+    /**
+     * Creates a new heading.
+     * @since   GIG-BTSP3.00.01
+     * 
+     * @param   mixed|NULL $title The optional title to add to the panel heading.
+     */
+    public function __construct($title = \NULL) {
+        parent::__construct("", ["class" => "panel-heading"]);
+        ($title === \NULL || $title === \FALSE ) ?: $this->setTitle($title);
+    }
+
+    /**
+     * Sets the title.
+     * @since   GIG-BTSP3.00.01
+     * 
+     * @param   mixed $title
+     * @param   int $headerLevel 1 thru 6 to specify the header level (h1,h2...)
+     */
+    public function setTitle($title, $headerLevel = 3) {
+        if (!isset($this->_title)) {
+            //var_dump("TESTANGEL");
+            $pointTitle = Basic::Header($headerLevel,$title);
+            $this->_title = &$pointTitle;
+            $this->_title->addClass("panel-title");
+            //$pointTitle = &$this->_title;
+            $this->addContent($this->_title);
+            
+        }else{
+            //unset($this->_title);
+//            $this->_title = Basic::Header(5,$title);
+//            $this->_title->addClass("panel-title2");
+            $this->_title->removeContent();
+            $this->_title->addContent($title);
+            $this->_title->setTag("h".$headerLevel);
+            
+        }
+    }
+
+}
+
+/**
+ * Class BodyTest
+ * 
+ * @internal 
+ *
+ * @author      Angel Sierra Vega <angel.sierra@grupoindie.com>
+ */
+class HeadingTest extends \GIndie\Test {
+
+    /**
+     * @test
+     */
+    public static function construct() {
+        $expected = "<div class=\"panel-heading\"></div>";
+        $result = new Heading();
+        static::execStrCmp($expected, $result);
+    }
+    
+    /**
+     * @test
+     */
+    public static function constructString() {
+        $expected = "<div class=\"panel-heading\"><h3 class=\"panel-title\">Title</h3></div>";
+        $result = new Heading("Title");
+        static::execStrCmp($expected, $result);
+    }
+    
+    /**
+     * @test
+     */
+    public static function constructFalse() {
+        $expected = "<div class=\"panel-heading\"></div>";
+        $result = new Heading(\FALSE);
+        static::execStrCmp($expected, $result);
+    }
+    
+    /**
+     * @test
+     */
+    public static function setTitle() {
+        $expected = "<div class=\"panel-heading\"><h4 class=\"panel-title\">IsChanged</h4></div>";
+        $result = new Heading("Title");
+        $result->setTitle("IsChanged",4);
+        static::execStrCmp($expected, $result);
+    }
+
+}
