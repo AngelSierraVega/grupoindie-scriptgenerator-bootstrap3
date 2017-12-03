@@ -31,7 +31,7 @@ class Footer extends HTML5\Node {
      * @version beta.00.01
      * @param boolean $btnDismiss
      */
-    public function __construct($btnDismiss = true) {
+    public function __construct($btnDismiss = false) {
         parent::__construct("div", false, ["class" => "modal-footer"]);
 //        $this->_btnGroup = $this->addContentGetPointer(HTML5\Node::Simple("div",
 //                        ["class" => "btn-group", "role" => "group",
@@ -52,7 +52,7 @@ class Footer extends HTML5\Node {
 //                    "class" => "btn btn-default",
 //                    "data-dismiss" => "modal"
 //                ]);
-            $this->addButton($btnDismiss);
+            //$this->addButton($btnDismiss);
         }
     }
 

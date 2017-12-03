@@ -88,7 +88,7 @@ class HeadingTest extends \GIndie\Test {
         $result = new Heading();
         static::execStrCmp($expected, $result);
     }
-    
+
     /**
      * @test
      */
@@ -97,7 +97,7 @@ class HeadingTest extends \GIndie\Test {
         $result = new Heading("Title");
         static::execStrCmp($expected, $result);
     }
-    
+
     /**
      * @test
      */
@@ -106,14 +106,14 @@ class HeadingTest extends \GIndie\Test {
         $result = new Heading(\FALSE);
         static::execStrCmp($expected, $result);
     }
-    
+
     /**
      * @test
      */
     public static function setTitle() {
         $expected = "<div class=\"panel-heading\"><h4 class=\"panel-title\">IsChanged</h4></div>";
         $result = new Heading("Title");
-        $result->setTitle("IsChanged",4);
+        $result->setTitle("IsChanged", 4);
         static::execStrCmp($expected, $result);
     }
 

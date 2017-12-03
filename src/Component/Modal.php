@@ -73,7 +73,7 @@ class Modal extends HTML5\Category\StylesSemantics\Div {
     public function __toStringDEPRECATED() {
         ob_start();
         ?>
-        <div id="gip-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div id="gip-modal" data-keyboard="true" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 </div><!-- /.modal-content -->

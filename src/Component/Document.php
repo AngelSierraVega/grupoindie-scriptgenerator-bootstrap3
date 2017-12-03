@@ -36,34 +36,44 @@ class Document extends HTML5\Document {
     public function __construct($title, $lang = "en", $pathToCSS = \NULL,
             $pathToTheme = \NULL, $pathToJquery = \NULL, $pathToJS = \NULL) {
         parent::__construct($title, $lang, $doctype = "html", $charset = "UTF-8");
+        
+        $this->addMeta(["http-equiv" => "Content-Type", "content" => "text/html; charset=utf-8"]);
 
         $this->addMeta(["http-equiv" => "X-UA-Compatible", "content" => "IE=edge"]);
         $this->addMeta(["name" => "viewport", "content" => "width=device-width, initial-scale=1"]);
 
-        if ($pathToCSS !== \NULL) {
+        if ($pathToCSS == \NULL) {
             $_css = $this->addLink("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
                     "stylesheet");
             $_css->setAttribute("integrity",
                     "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u");
             $_css->setAttribute("crossorigin", "anonymous");
+        }else{
+            $this->addLink($pathToCSS, "stylesheet");
         }
-        if ($pathToTheme !== \NULL) {
+        if ($pathToTheme == \NULL) {
             $theme = $this->addLink("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css",
                     "stylesheet");
             $theme->setAttribute("integrity",
                     "sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp");
             $theme->setAttribute("crossorigin", "anonymous");
+        }else{
+            $this->addLink($pathToTheme, "stylesheet");
         }
-        if ($pathToJquery !== \NULL) {
+        if ($pathToJquery == \NULL) {
             $this->addScript("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",
                     true);
+        }else{
+            $this->addScript($pathToJquery, \TRUE);
         }
-        if ($pathToJS !== \NULL) {
+        if ($pathToJS == \NULL) {
             $_js = $this->addScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js",
                     true);
             $_js->setAttribute("integrity",
                     "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa");
             $_js->setAttribute("crossorigin", "anonymous");
+        }else{
+            $this->addScript($pathToJS, \TRUE);
         }
     }
 

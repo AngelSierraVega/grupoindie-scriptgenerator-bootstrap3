@@ -61,6 +61,11 @@ class Content extends HTML5\Node {
             $this->_footer->addContent($footer);
         }
     }
+    
+    public function addContent($content) {
+        //parent::addContent($content);
+        return $this->_body->addContent($content);
+    }
 
     public function addFooterContent($content) {
         return $this->_footer->addContent($content);

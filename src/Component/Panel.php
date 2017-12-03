@@ -77,10 +77,11 @@ class Panel extends Div {
 
     public function setHeading($heading) {
         unset($this->_heading);
+        //var_dump(\($heading, Panel\Heading::class));
         if (is_bool($heading)) {
             $heading !== \TRUE ?: $this->_heading = $this->addContentGetPointer(new Panel\Heading());
         } else {
-            if (is_subclass_of($heading, __NAMESPACE__ . "Panel\Heading")) {
+            if (\is_a($heading, Panel\Heading::class)) {
                 $this->_heading = $this->addContentGetPointer($heading);
             } else {
                 $this->_heading = $this->addContentGetPointer(new Panel\Heading($heading));
