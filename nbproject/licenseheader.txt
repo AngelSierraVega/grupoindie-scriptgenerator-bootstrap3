@@ -4,12 +4,14 @@
 <#if licenseFirst??>
 ${licenseFirst}
 </#if>
-${licensePrefix}${project.displayName} - ${name} ${date?date?string("yyyy-MM-dd")}
-${licensePrefix}@copyright (C) ${date?date?string("yyyy")} Angel Sierra Vega. Grupo INDIE.
+${licensePrefix}${project.displayName} - ${name}
 ${licensePrefix?replace(" +$", "", "r")}
-${licensePrefix}@package Bootstrap3
+${licensePrefix}@copyright (c) ${date?date?string("yyyy")} Angel Sierra Vega. Grupo INDIE.
 ${licensePrefix?replace(" +$", "", "r")}
-${licensePrefix}@version GIG-BTSP3.00.00
+${licensePrefix}@package ScriptGenerator
+${licensePrefix}@subpackage Bootstrap3
+${licensePrefix?replace(" +$", "", "r")}
+${licensePrefix}@version SG-BTSP3.00.00 ${date?date?string("yy-MM-dd")} Empty [class/trait/interface/file] created.
 <#if licenseLast??>
 ${licenseLast}
 </#if>
