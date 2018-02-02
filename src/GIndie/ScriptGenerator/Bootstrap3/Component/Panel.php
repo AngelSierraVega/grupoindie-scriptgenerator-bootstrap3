@@ -25,6 +25,7 @@ use GIndie\ScriptGenerator\Bootstrap3\ContextualColors;
  * - Updated varnames due to PSR-1 violation
  * - Added tests from PanelTest
  * - Deleted PanelTest
+ * - Added get methods for private vars.
  */
 class Panel extends Div
 {
@@ -135,6 +136,15 @@ class Panel extends Div
     }
 
     /**
+     * @since SG-BTSP3.00.01
+     * @return \GIndie\ScriptGenerator\Bootstrap3\Component\Panel\Heading
+     */
+    public function getHeading()
+    {
+        return $this->heading;
+    }
+
+    /**
      * 
      * @param type $headingBody
      * @return $this
@@ -143,18 +153,27 @@ class Panel extends Div
     public function setHeadingBody($headingBody)
     {
         unset($this->headingBody);
-        switch ($headingBody)
+        switch (true)
         {
-            case (true):
+            case (true === $headingBody):
                 $this->headingBody = $this->addContentGetPointer(Node::contentOnly([]));
                 break;
-            case (false):
+            case (false === $headingBody):
                 break;
             default:
                 $this->headingBody = $this->addContentGetPointer(Node::contentOnly($headingBody));
                 break;
         }
         return $this;
+    }
+    
+    /**
+     * @since SG-BTSP3.00.01
+     * @return \GIndie\ScriptGenerator\DML\Node
+     */
+    public function getHeadingBody()
+    {
+        return $this->headingBody;
     }
 
     /**
@@ -185,6 +204,15 @@ class Panel extends Div
     }
 
     /**
+     * @since SG-BTSP3.00.01
+     * @return \GIndie\ScriptGenerator\Bootstrap3\Component\Panel\Body
+     */
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    /**
      * 
      * @param type $bodyFooter
      * @return $this
@@ -209,6 +237,15 @@ class Panel extends Div
                 break;
         }
         return $this;
+    }
+    
+    /**
+     * @since SG-BTSP3.00.01
+     * @return \GIndie\ScriptGenerator\DML\Node
+     */
+    public function getBodyFooter()
+    {
+        return $this->bodyFooter;
     }
 
     /**
@@ -236,6 +273,15 @@ class Panel extends Div
                 break;
         }
         return $this;
+    }
+
+    /**
+     * @since SG-BTSP3.00.01
+     * @return \GIndie\ScriptGenerator\Bootstrap3\Component\Panel\Footer
+     */
+    public function getFooter()
+    {
+        return $this->footer;
     }
 
 }
