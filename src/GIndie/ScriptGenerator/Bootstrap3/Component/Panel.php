@@ -1,222 +1,241 @@
 <?php
 
-/*
- * Copyright (C) 2016 Angel Sierra Vega. Grupo INDIE.
- *
- * This software is protected under GNU: you can use, study and modify it
- * but not distribute it under the terms of the GNU General Public License 
- * as published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
+/**
+ * SG3-Bootstrap3 - test
  */
 
-namespace GIndie\Generator\DML\HTML5\Bootstrap3\Component;
+namespace GIndie\ScriptGenerator\Bootstrap3\Component;
 
-use GIndie\Generator\DML\Node;
-use GIndie\Generator\DML\HTML5;
-use GIndie\Generator\DML\HTML5\Category\StylesSemantics\Div;
-use GIndie\Generator\DML\HTML5\Bootstrap3\ContextualColors;
+use GIndie\ScriptGenerator\DML\Node;
+use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div;
+use GIndie\ScriptGenerator\Bootstrap3\ContextualColors;
 
 /**
  * Description of Panel
  * 
- * @since       2017-04-23
- * @version     GIG.BTS3.00
- *
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
+ * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
+ *
+ * @package ScriptGenerator
+ * @subpackage Bootstrap3
+ * 
+ * @version GIG.BTS3.00 2017-04-23
+ *
+ * @edit SG-BTSP3.00.01 18-02-02
+ * - Updated varnames due to PSR-1 violation
+ * - Added tests from PanelTest
+ * - Deleted PanelTest
  */
-class Panel extends Div {
+class Panel extends Div
+{
 
+    /**
+     * 
+     */
     use ContextualColors;
 
     /**
      * 
-     * @version     GIG.BTS3.00.01
-     * @var         GIgenerator\DML\HTML5\Node $_heading
+     * @version GIG.BTS3.00.01
+     * @var GIgenerator\DML\HTML5\Node $heading
+     * @edit SG-BTSP3.00.01
      */
-    private $_heading;
+    private $heading;
 
     /**
      * 
-     * @version     GIG.BTS3.00.01
-     * @var         GIgenerator\DML\HTML5\Node $_modalDialog
+     * @version GIG.BTS3.00.01
+     * @var GIgenerator\DML\HTML5\Node $body
+     * @edit SG-BTSP3.00.01
      */
-    private $_body;
+    private $body;
 
     /**
      * 
-     * @version     GIG.BTS3.00.01
-     * @var         GIgenerator\DML\HTML5\Node $_modalDialog
+     * @version GIG.BTS3.00.01
+     * @var GIgenerator\DML\HTML5\Node $footer
+     * @edit SG-BTSP3.00.01
      */
-    private $_footer;
+    private $footer;
 
     /**
      * @todo Método agregar/definir contenido
      * @var GIndie\Generator\DML\Node Placeholder for the content between heading and body.
+     * @edit SG-BTSP3.00.01
      */
-    private $_heading_body;
+    private $headingBody;
 
     /**
      * @todo Método agregar/definir contenido
      * @var GIndie\Generator\DML\Node Placeholder for the content between body and footer.
+     * @edit SG-BTSP3.00.01
      */
-    private $_body_footer;
+    private $bodyFooter;
 
-    public function __construct($heading = \FALSE, $heading_body = \FALSE,
-            $body = \TRUE, $body_footer = \FALSE, $footer = \FALSE) {
+    /**
+     * 
+     * @param type $heading
+     * @param type $headingBody
+     * @param type $body
+     * @param type $bodyFooter
+     * @param type $footer
+     * @edit SG-BTSP3.00.01
+     * 
+     * @ut_str construct01 "<div class="panel panel-default"></div>"
+     * 
+     * @utp_params construct02 "TITLE"
+     * @ut_str construct02 "<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">TITLE</h3></div></div>"
+     * 
+     * @utp_params construct03 "TITLE" "<span></span>"
+     * @ut_str construct03 "<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">TITLE</h3></div><span></span></div>"
+     * 
+     * @utp_params construct04 "TITLE" "<span></span>" "This is the content"
+     * @ut_str construct04 "<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">TITLE</h3></div><span></span><div class="panel-body">This is the content</div></div>"
+     * 
+     * @utp_params construct05 "TITLE" "<span></span>" "This is the content" "<span></span>"
+     * @ut_str construct05 "<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">TITLE</h3></div><span></span><div class="panel-body">This is the content</div><span></span></div>"
+     * 
+     * @utp_params construct06 "TITLE" "<span></span>" "This is the content" "<span></span>" "Footer"
+     * @ut_str construct06 "<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">TITLE</h3></div><span></span><div class="panel-body">This is the content</div><span></span><div class="panel-footer">Footer</div></div>"
+     */
+    public function __construct($heading = false, $headingBody = false, $body = false, $bodyFooter = false,
+                                $footer = false)
+    {
         parent::__construct("", ["class" => "panel panel-default"]);
         $this->baseClass = "panel";
         //$this->addClass($this->baseClass);
         //$this->addClass($classnames);
         //$this->setContext(static::$COLOR_DEFAULT, \FALSE);
-        $heading === \FALSE ?: $this->setHeading($heading);
-        $heading_body === \FALSE ?: $this->setHeadingBody($heading_body);
-        $body === \FALSE ?: $this->setBody($body);
-        $body_footer === \FALSE ?: $this->setBodyFooter($body_footer);
-        $footer === \FALSE ?: $this->setFooter($footer);
+        $heading === false ?: $this->setHeading($heading);
+        $headingBody === false ?: $this->setHeadingBody($headingBody);
+        $body === false ?: $this->setBody($body);
+        $bodyFooter === false ?: $this->setBodyFooter($bodyFooter);
+        $footer === false ?: $this->setFooter($footer);
     }
 
-    public function setHeading($heading) {
-        unset($this->_heading);
-        //var_dump(\($heading, Panel\Heading::class));
-        if (is_bool($heading)) {
-            $heading !== \TRUE ?: $this->_heading = $this->addContentGetPointer(new Panel\Heading());
+    /**
+     * 
+     * @param type $heading
+     * @return $this
+     * @edit SG-BTSP3.00.01
+     */
+    public function setHeading($heading)
+    {
+        unset($this->heading);
+        if (\is_bool($heading)) {
+            $heading !== \TRUE ?: $this->heading = $this->addContentGetPointer(new Panel\Heading());
         } else {
             if (\is_a($heading, Panel\Heading::class)) {
-                $this->_heading = $this->addContentGetPointer($heading);
+                $this->heading = $this->addContentGetPointer($heading);
             } else {
-                $this->_heading = $this->addContentGetPointer(new Panel\Heading($heading));
-            };
+                $this->heading = $this->addContentGetPointer(new Panel\Heading($heading));
+            }
         }
         return $this;
     }
 
-    public function setHeadingBody($heading_body) {
-        unset($this->_heading_body);
-        switch (\TRUE) {
-            case (\TRUE === $heading_body):
-                $this->_heading_body = $this->addContentGetPointer(Node::ContentOnly([]));
+    /**
+     * 
+     * @param type $headingBody
+     * @return $this
+     * @edit SG-BTSP3.00.01
+     */
+    public function setHeadingBody($headingBody)
+    {
+        unset($this->headingBody);
+        switch ($headingBody)
+        {
+            case (true):
+                $this->headingBody = $this->addContentGetPointer(Node::contentOnly([]));
                 break;
-            case (\FALSE === $heading_body):
+            case (false):
                 break;
             default:
-                if (is_array($heading_body)) {
-                    $this->_heading_body = $this->addContentGetPointer(Node::ContentOnly($heading_body));
-                } else {
-                    $this->_heading_body = $this->addContentGetPointer(Node::ContentOnly([$heading_body]));
-                }
+                $this->headingBody = $this->addContentGetPointer(Node::contentOnly($headingBody));
                 break;
         }
         return $this;
     }
 
-    public function setBody($body) {
-        unset($this->_body);
-        switch (\TRUE) {
+    /**
+     * 
+     * @param type $body
+     * @return $this
+     * @edit SG-BTSP3.00.01
+     */
+    public function setBody($body)
+    {
+        unset($this->body);
+        switch (\TRUE)
+        {
             case (\TRUE === $body):
-                $this->_body = $this->addContentGetPointer(new Panel\Body());
+                $this->body = $this->addContentGetPointer(new Panel\Body());
                 break;
             case (\FALSE == $body):
                 break;
             default:
-                if (is_subclass_of($body, __NAMESPACE__ . "Panel\Body")) {
-                    $this->_body = $this->addContentGetPointer($body);
+                if (\is_subclass_of($body, __NAMESPACE__ . "Panel\Body")) {
+                    $this->body = $this->addContentGetPointer($body);
                 } else {
-                    $this->_body = $this->addContentGetPointer(new Panel\Body($body));
+                    $this->body = $this->addContentGetPointer(new Panel\Body($body));
                 }
                 break;
         }
         return $this;
     }
 
-    public function setBodyFooter($body_footer) {
-        unset($this->_body_footer);
-        switch (\TRUE) {
-            case (\TRUE === $body_footer):
-                $this->_body_footer = $this->addContentGetPointer(Node::ContentOnly([]));
+    /**
+     * 
+     * @param type $bodyFooter
+     * @return $this
+     * @edit SG-BTSP3.00.01
+     */
+    public function setBodyFooter($bodyFooter)
+    {
+        unset($this->bodyFooter);
+        switch (\TRUE)
+        {
+            case (\TRUE === $bodyFooter):
+                $this->bodyFooter = $this->addContentGetPointer(Node::ContentOnly([]));
                 break;
-            case (\FALSE === $body_footer):
+            case (\FALSE === $bodyFooter):
                 break;
             default:
-                if (is_array($body_footer)) {
-                    $this->_body_footer = $this->addContentGetPointer(Node::ContentOnly($body_footer));
+                if (\is_array($bodyFooter)) {
+                    $this->bodyFooter = $this->addContentGetPointer(Node::contentOnly($bodyFooter));
                 } else {
-                    $this->_body_footer = $this->addContentGetPointer(Node::ContentOnly([$body_footer]));
+                    $this->bodyFooter = $this->addContentGetPointer(Node::contentOnly([$bodyFooter]));
                 }
                 break;
         }
         return $this;
     }
 
-    public function setFooter($footer) {
-        unset($this->_footer);
-        switch (\TRUE) {
+    /**
+     * 
+     * @param type $footer
+     * @return $this
+     * @edit SG-BTSP3.00.01
+     */
+    public function setFooter($footer)
+    {
+        unset($this->footer);
+        switch (\TRUE)
+        {
             case (\TRUE === $footer):
-                $this->_footer = $this->addContentGetPointer(new Panel\Footer());
+                $this->footer = $this->addContentGetPointer(new Panel\Footer());
                 break;
             case (\FALSE === $footer):
                 break;
             default:
-                if (is_subclass_of($footer, __NAMESPACE__ . "Panel\Footer")) {
-                    $this->_footer = $this->addContentGetPointer($footer);
+                if (\is_subclass_of($footer, __NAMESPACE__ . "Panel\Footer")) {
+                    $this->footer = $this->addContentGetPointer($footer);
                 } else {
-                    $this->_footer = $this->addContentGetPointer(new Panel\Footer($footer));
+                    $this->footer = $this->addContentGetPointer(new Panel\Footer($footer));
                 }
                 break;
         }
         return $this;
-    }
-
-}
-
-/**
- * Class MetaTest
- *
- * @package GIndie\Generator\DML\HTML5\Category
- * @author Liliana Hernández Castañeda <liliana.hercast@gmail.com>
- */
-class PanelTest extends \GIndie\Test {
-
-    /**
-     * @test
-     * @internal 
-     */
-    public static function construct01() {
-        $expected = "<div class=\"panel panel-default\"></div>";
-        $result = new Panel(\FALSE, \FALSE, \FALSE, \FALSE, \FALSE);
-        static::execStrCmp($expected, $result);
-    }
-
-    public static function construct02() {
-        $expected = "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 class=\"panel-title\">TITLE</h3></div></div>";
-        $result = new Panel('TITLE', \FALSE, \FALSE, \FALSE, \FALSE);
-        static::execStrCmp($expected, $result);
-    }
-
-    public static function construct03() {
-        $expected = "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 class=\"panel-title\">TITLE</h3></div><span></span></div>";
-        $result = new Panel("TITLE", "<span></span>", \FALSE, \FALSE, \FALSE);
-        static::execStrCmp($expected, $result);
-    }
-
-    public static function construct04() {
-        $expected = "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 class=\"panel-title\">TITLE</h3></div><span></span><div class=\"panel-body\">This is the content</div></div>";
-        $result = new Panel('TITLE', "<span></span>", 'This is the content',
-                \FALSE, \FALSE);
-        static::execStrCmp($expected, $result);
-    }
-
-    public static function construct05() {
-        $expected = "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 class=\"panel-title\">TITLE</h3></div><span></span><div class=\"panel-body\">This is the content</div><span></span></div>";
-        $result = new Panel('TITLE', "<span></span>", 'This is the content',
-                '<span></span>', \FALSE);
-        static::execStrCmp($expected, $result);
-    }
-
-    public static function construct06() {
-        $expected = "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 class=\"panel-title\">TITLE</h3></div><span></span><div class=\"panel-body\">This is the content</div><span></span><div class=\"panel-footer\">Footer</div></div>";
-        $result = new Panel('TITLE', '<span></span>', 'This is the content',
-                '<span></span>', 'Footer');
-        static::execStrCmp($expected, $result);
     }
 
 }
