@@ -9,9 +9,9 @@
  * License, or (at your option) any later version.
  */
 
-namespace GIndie\Generator\DML\HTML5\Bootstrap3\Component\Panel;
+namespace GIndie\ScriptGenerator\Bootstrap3\Component\Panel;
 
-use GIndie\Generator\DML\HTML5\Category\StylesSemantics\Div;
+use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div;
 
 /**
  * The body of the panel component.
@@ -25,55 +25,31 @@ use GIndie\Generator\DML\HTML5\Category\StylesSemantics\Div;
  * @since       2017-05-20
  * @author      Angel Sierra Vega <angel.sierra@grupoindie.com>
  * 
+ * @edit SG-BTSP3.00.01 18-02-02
+ * - Added tests from BodyTest
+ * - Deleted BodyTest
  */
 class Body extends Div {
-
+      
     /**
      * Creates a new body.
      * @since   GIG-BTSP3.00.01
      * 
-     * @param   mixed|NULL $content The optional content to add to the panel body.
+     * @param mixed|NULL $content The optional content to add to the panel body.
+     * 
+     * @edit SG-BTSP3.00.01
+     * 
+     * @ut_str construct "<div class="panel-body"></div>"
+     * 
+     * @utp_params constructString "Hello!"
+     * @ut_str constructString "<div class="panel-body">Hello!</div>"
+     * 
+     * @utp_params constructFalse false
+     * @ut_str constructFalse "<div class="panel-body"></div>"
+     * 
      */
-    public function __construct($content = \NULL) {
+    public function __construct($content = null) {
         parent::__construct($content, ["class" => "panel-body"]);
-    }
-
-}
-
-/**
- * Class BodyTest
- * 
- * @internal 
- *
- * @author      Angel Sierra Vega <angel.sierra@grupoindie.com>
- */
-class BodyTest extends \GIndie\Test {
-
-    /**
-     * @test
-     */
-    public static function construct() {
-        $expected = "<div class=\"panel-body\"></div>";
-        $result = new Body();
-        static::execStrCmp($expected, $result);
-    }
-    
-    /**
-     * @test
-     */
-    public static function constructString() {
-        $expected = "<div class=\"panel-body\">Hello!</div>";
-        $result = new Body("Hello!");
-        static::execStrCmp($expected, $result);
-    }
-    
-    /**
-     * @test
-     */
-    public static function constructFalse() {
-        $expected = "<div class=\"panel-body\"></div>";
-        $result = new Body(\FALSE);
-        static::execStrCmp($expected, $result);
     }
 
 }

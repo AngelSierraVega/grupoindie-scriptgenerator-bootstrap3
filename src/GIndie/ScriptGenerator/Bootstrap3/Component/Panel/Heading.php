@@ -9,10 +9,10 @@
  * License, or (at your option) any later version.
  */
 
-namespace GIndie\Generator\DML\HTML5\Bootstrap3\Component\Panel;
+namespace GIndie\ScriptGenerator\Bootstrap3\Component\Panel;
 
-use GIndie\Generator\DML\HTML5\Category\Basic;
-use GIndie\Generator\DML\HTML5\Category\StylesSemantics\Div;
+use GIndie\ScriptGenerator\HTML5\Category\Basic;
+use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div;
 
 /**
  * The heading of the panel component.
@@ -26,8 +26,13 @@ use GIndie\Generator\DML\HTML5\Category\StylesSemantics\Div;
  * @since       2017-05-20
  * @author      Angel Sierra Vega <angel.sierra@grupoindie.com>
  * 
+ * 
+ * @edit SG-BTSP3.00.01 18-02-02
+ * - Added tests from HeadingTest
+ * - Deleted HeadingTest
  */
-class Heading extends Div {
+class Heading extends Div
+{
 
     private $_title;
 
@@ -36,10 +41,27 @@ class Heading extends Div {
      * @since   GIG-BTSP3.00.01
      * 
      * @param   mixed|NULL $title The optional title to add to the panel heading.
+     * 
+     * @ut_str construct "<div class="panel-heading"></div>"
+     * 
+     * @ut_params @ut_params "Title"
+     * @ut_str constructString "<div class="panel-heading"><h3 class="panel-title">Title</h3></div>"
      */
-    public function __construct($title = \NULL) {
+    public function __construct($title = \NULL)
+    {
         parent::__construct("", ["class" => "panel-heading"]);
         ($title === \NULL || $title === \FALSE ) ?: $this->setTitle($title);
+    }
+
+    /**
+     * @todo
+     */
+    public static function setTitleTEST()
+    {
+        $expected = "<div class=\"panel-heading\"><h4 class=\"panel-title\">IsChanged</h4></div>";
+        $result = new Heading("Title");
+        $result->setTitle("IsChanged", 4);
+        static::execStrCmp($expected, $result);
     }
 
     /**
@@ -49,72 +71,23 @@ class Heading extends Div {
      * @param   mixed $title
      * @param   int $headerLevel 1 thru 6 to specify the header level (h1,h2...)
      */
-    public function setTitle($title, $headerLevel = 3) {
+    public function setTitle($title, $headerLevel = 3)
+    {
         if (!isset($this->_title)) {
             //var_dump("TESTANGEL");
-            $pointTitle = Basic::Header($headerLevel,$title);
+            $pointTitle = Basic::Header($headerLevel, $title);
             $this->_title = &$pointTitle;
             $this->_title->addClass("panel-title");
             //$pointTitle = &$this->_title;
             $this->addContent($this->_title);
-            
-        }else{
+        } else {
             //unset($this->_title);
 //            $this->_title = Basic::Header(5,$title);
 //            $this->_title->addClass("panel-title2");
             $this->_title->removeContent();
             $this->_title->addContent($title);
-            $this->_title->setTag("h".$headerLevel);
-            
+            $this->_title->setTag("h" . $headerLevel);
         }
-    }
-
-}
-
-/**
- * Class BodyTest
- * 
- * @internal 
- *
- * @author      Angel Sierra Vega <angel.sierra@grupoindie.com>
- */
-class HeadingTest extends \GIndie\Test {
-
-    /**
-     * @test
-     */
-    public static function construct() {
-        $expected = "<div class=\"panel-heading\"></div>";
-        $result = new Heading();
-        static::execStrCmp($expected, $result);
-    }
-
-    /**
-     * @test
-     */
-    public static function constructString() {
-        $expected = "<div class=\"panel-heading\"><h3 class=\"panel-title\">Title</h3></div>";
-        $result = new Heading("Title");
-        static::execStrCmp($expected, $result);
-    }
-
-    /**
-     * @test
-     */
-    public static function constructFalse() {
-        $expected = "<div class=\"panel-heading\"></div>";
-        $result = new Heading(\FALSE);
-        static::execStrCmp($expected, $result);
-    }
-
-    /**
-     * @test
-     */
-    public static function setTitle() {
-        $expected = "<div class=\"panel-heading\"><h4 class=\"panel-title\">IsChanged</h4></div>";
-        $result = new Heading("Title");
-        $result->setTitle("IsChanged", 4);
-        static::execStrCmp($expected, $result);
     }
 
 }
