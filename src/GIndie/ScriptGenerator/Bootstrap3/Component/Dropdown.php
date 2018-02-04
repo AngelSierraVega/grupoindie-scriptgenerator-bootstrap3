@@ -9,10 +9,10 @@
  * License, or (at your option) any later version.
  */
 
-namespace GIndie\Generator\DML\HTML5\Bootstrap3\Component;
+namespace GIndie\ScriptGenerator\Bootstrap3\Component;
 
-use GIndie\Generator\DML\HTML5\Category\StylesSemantics;
-use GIndie\Generator\DML\HTML5\Category\Lists;
+use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics;
+use GIndie\ScriptGenerator\HTML5\Category\Lists;
 
 /**
  * 
@@ -20,7 +20,8 @@ use GIndie\Generator\DML\HTML5\Category\Lists;
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-04
  */
-class Dropdown extends StylesSemantics\Div {
+class Dropdown extends StylesSemantics\Div
+{
 
     /**
      *
@@ -41,10 +42,12 @@ class Dropdown extends StylesSemantics\Div {
      * @version beta.00.01
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-04
+     * @ut_params2 construct "brandName" ["element"=>"test"]
+     * @ut_params construct "brandName" []
+     * @ut_str construct "<div class="dropdown"><span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">brandNameArray <span class="caret"></span></span><ul class="dropdown-menu"></ul></div>"
      */
-    public function __construct($brand, array $listElements,
-            $customToggleTag = null) {
-        //parent::__construct("div", false, );
+    public function __construct($brand, array $listElements = [], $customToggleTag = null)
+    {
         parent::__construct([]);
         $this->addClass("dropdown");
         $this->_toggle = $this->addContentGetPointer(new Dropdown\Toggle($brand));
@@ -52,7 +55,7 @@ class Dropdown extends StylesSemantics\Div {
             $this->_toggle->setTag($customToggleTag);
         }
         $this->_menu = $this->addContentGetPointer(Lists::Unordered($listElements));
-        $this->_menu->setAttribute("class", "dropdown-menu");
+        $this->_menu->addClass("dropdown-menu");
     }
 
     /**
@@ -62,9 +65,15 @@ class Dropdown extends StylesSemantics\Div {
      * @version beta.00.01
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-04
+     * 
+     * @ut_factory addListElement __construct construct
+     * @ut_params addListElement "element"
+     * @ut_str addListElement "<div class="dropdown"><span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></span><ul class="dropdown-menu"><li>element</li></ul></div>"
      */
-    public function addListElement($element) {
-        return $this->_menu->addListElement($element);
+    public function addListElement($element)
+    {
+        $this->_menu->addListElement($element);
+        return $this;
     }
 
 }

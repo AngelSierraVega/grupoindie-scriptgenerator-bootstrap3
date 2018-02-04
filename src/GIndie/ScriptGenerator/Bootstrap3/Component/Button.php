@@ -9,17 +9,25 @@
  * License, or (at your option) any later version.
  */
 
-namespace GIndie\Generator\DML\HTML5\Bootstrap3\Component;
+namespace GIndie\ScriptGenerator\Bootstrap3\Component;
 
-use GIndie\Generator\DML\HTML5\Bootstrap3\ContextualColors;
-use GIndie\Generator\DML\HTML5\Category\FormInput;
+use GIndie\ScriptGenerator\Bootstrap3\ContextualColors;
+use GIndie\ScriptGenerator\HTML5\Category\FormInput;
 
 class Button extends FormInput\Button {
 
     use ContextualColors;
 
     //protected $base
-    public function __construct($content = null, $type = 0) {
+    
+    /**
+     * 
+     * @param type $content
+     * @param type $type
+     * 
+     * @ut_str construct "<button type="button" class="btn btn-default"></button>"
+     */
+    public function __construct($content = null, $type = "button") {
         parent::__construct($content, $type);
         $this->baseClass = "btn";
         $this->addClass($this->baseClass);

@@ -9,11 +9,11 @@
  * License, or (at your option) any later version.
  */
 
-//namespace GIndie\Generator\DML\HTML5\Bootstrap3\Modal;
-namespace GIndie\Generator\DML\HTML5\Bootstrap3\Component\Modal;
+//namespace GIndie\ScriptGenerator\Bootstrap3\Modal;
+namespace GIndie\ScriptGenerator\Bootstrap3\Component\Modal;
 
-use GIndie\Generator\DML\HTML5;
-use GIndie\Generator\DML\HTML5\Bootstrap3;
+use GIndie\ScriptGenerator\HTML5;
+use GIndie\ScriptGenerator\Bootstrap3;
 
 /**
  * 

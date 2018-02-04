@@ -9,9 +9,9 @@
  * License, or (at your option) any later version.
  */
 
-namespace GIndie\Generator\DML\HTML5\Bootstrap3\Component\Dropdown;
+namespace GIndie\ScriptGenerator\Bootstrap3\Component\Dropdown;
 
-use GIndie\Generator\DML\HTML5\Category\StylesSemantics;
+use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics;
 
 /**
  * 
@@ -34,7 +34,7 @@ class Toggle extends StylesSemantics\Span {
         $attributes["role"] = "button";
         $attributes["aria-haspopup"] = "true";
         $attributes["aria-expanded"] = "false";
-        parent::__construct([$content], $attributes);
+        parent::__construct($content, $attributes);
         $this->addContent(" ");
         $this->addContent(new StylesSemantics\Span([], ["class" => "caret"]));
     }

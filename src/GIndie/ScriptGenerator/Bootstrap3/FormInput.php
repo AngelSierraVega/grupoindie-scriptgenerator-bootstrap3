@@ -7,6 +7,7 @@
 
 namespace GIndie\ScriptGenerator\Bootstrap3;
 
+use \GIndie\ScriptGenerator\HTML5;
 use \GIndie\ScriptGenerator\HTML5\Category\FormInput as HTML5FormInput;
 
 /**
@@ -22,12 +23,24 @@ use \GIndie\ScriptGenerator\HTML5\Category\FormInput as HTML5FormInput;
  * @edit SG-BTSP3.00.01
  * - Extend from HTML5FormInput
  * - Created form-control inputs
+ * - Created formGroup(), inputSubmit()
  */
 class FormInput extends HTML5FormInput
 {
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
+     * @param type $label
+     * @param \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input $input
+     * @return \GIndie\ScriptGenerator\Bootstrap3\FormInput\FormGroup
+     */
+    public static function formGroup($label, HTML5\Category\FormInput\Input $input)
+    {
+        return new FormInput\FormGroup($label, $input);
+    }
+
+    /**
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Date
      */
     public static function inputDate()
@@ -36,7 +49,7 @@ class FormInput extends HTML5FormInput
     }
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Text
      */
     public static function inputText()
@@ -45,7 +58,7 @@ class FormInput extends HTML5FormInput
     }
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Email
      */
     public static function inputEmail()
@@ -54,7 +67,7 @@ class FormInput extends HTML5FormInput
     }
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Password
      */
     public static function inputPassword()
@@ -63,7 +76,7 @@ class FormInput extends HTML5FormInput
     }
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Month
      */
     public static function inputMonth()
@@ -72,7 +85,7 @@ class FormInput extends HTML5FormInput
     }
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Search
      */
     public static function inputSearch()
@@ -81,7 +94,16 @@ class FormInput extends HTML5FormInput
     }
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
+     * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Submit
+     */
+    public static function inputSubmit()
+    {
+        return parent::inputSubmit()->addClass("btn btn-default");
+    }
+
+    /**
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Tel
      */
     public static function inputTel()
@@ -90,7 +112,7 @@ class FormInput extends HTML5FormInput
     }
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Number
      */
     public static function inputNumber()
@@ -99,7 +121,7 @@ class FormInput extends HTML5FormInput
     }
 
     /**
-     * @edit SG-BTSP3.00.01 
+     * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\URL
      */
     public static function inputURL()
