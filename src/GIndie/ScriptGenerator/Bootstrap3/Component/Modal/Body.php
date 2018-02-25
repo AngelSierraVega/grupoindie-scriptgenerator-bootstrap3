@@ -20,7 +20,8 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * @since 2017-01-18
  * @version beta.00.01
  */
-class Body extends HTML5\Node {
+class Body extends HTML5\Node
+{
 
     /**
      * 
@@ -29,8 +30,10 @@ class Body extends HTML5\Node {
      * @since 2017-01-18
      * @version beta.00.01
      */
-    public function __construct($content = null) {
-        parent::__construct("div", false, ["class" => "modal-body"]);
+    public function __construct($content = null)
+    {
+        parent::__construct(static::TYPE_DEFAULT, "div", ["class" => "modal-body"]);
+        //parent::__construct("div", false, ["class" => "modal-body"]);
         if ($content !== null) {
             $this->addContent($content);
         }

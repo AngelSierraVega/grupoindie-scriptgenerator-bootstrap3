@@ -20,7 +20,8 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * @since 2017-01-18
  * @version beta.00.01
  */
-class Footer extends HTML5\Node {
+class Footer extends HTML5\Node
+{
 
     private $_btnGroup;
 
@@ -31,21 +32,21 @@ class Footer extends HTML5\Node {
      * @version beta.00.01
      * @param boolean $btnDismiss
      */
-    public function __construct($btnDismiss = false) {
-        parent::__construct("div", false, ["class" => "modal-footer"]);
+    public function __construct($btnDismiss = false)
+    {
+        parent::__construct(static::TYPE_DEFAULT, "div", ["class" => "modal-footer"]);
+        //parent::__construct("div", false, ["class" => "modal-footer"]);
 //        $this->_btnGroup = $this->addContentGetPointer(HTML5\Node::Simple("div",
 //                        ["class" => "btn-group", "role" => "group",
 //                    "aria-label" => "..."])
 //        );
-        $this->_btnGroup = $this->addContentGetPointer(HTML5\Category\StylesSemantics::Div("",
-                        ["class" => "btn-group", "role" => "group",
+        $this->_btnGroup = $this->addContentGetPointer(HTML5\Category\StylesSemantics::Div("", ["class" => "btn-group", "role" => "group",
                     "aria-label" => "..."])
         );
         if ($btnDismiss) {
             //$btnDismiss = \GIgenerator\DML\HTML5\Bootstrap3\Factory::Button($content, 0);
             //$btnDismiss = new \GIgenerator\DML\HTML5\Bootstrap3\Button($content, $type);
-            $btnDismiss = new Bootstrap3\Component\Button("Cerrar",
-                    Bootstrap3\Component\Button::TYPE_BUTTON);
+            $btnDismiss = new Bootstrap3\Component\Button("Cerrar", Bootstrap3\Component\Button::TYPE_BUTTON);
             $btnDismiss->setAttribute("data-dismiss", "modal");
             //$btnDismiss->addClass();
 //                \GIgenerator\DML\HTML5\FormInput\Button("Cerrar", [
@@ -56,7 +57,8 @@ class Footer extends HTML5\Node {
         }
     }
 
-    public function addButton($button) {
+    public function addButton($button)
+    {
         return $this->_btnGroup->addContent($button);
     }
 

@@ -10,6 +10,7 @@
  */
 
 //namespace GIndie\ScriptGenerator\Bootstrap3\Modal;
+
 namespace GIndie\ScriptGenerator\Bootstrap3\Component\Modal;
 
 use GIndie\ScriptGenerator\HTML5;
@@ -21,7 +22,8 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * @since 2017-01-18
  * @version beta.00.01
  */
-class Content extends HTML5\Node {
+class Content extends HTML5\Node
+{
 
     /**
      *
@@ -50,28 +52,32 @@ class Content extends HTML5\Node {
      * @since 2017-01-18
      * @version beta.00.01
      */
-    public function __construct($title, $content = null, $footer = null) {
-        parent::__construct("div", false, ["class" => "modal-content"]);
+    public function __construct($title, $content = null, $footer = null)
+    {
+        parent::__construct(static::TYPE_DEFAULT, "div", ["class" => "modal-content"]);
+        //parent::__construct( "div", false, ["class" => "modal-content"]);
         //$this->setAttribute("class", "modal-content");
-        $this->_header = $this->addContentGetPointer(new Header($title,
-                true));
+        $this->_header = $this->addContentGetPointer(new Header($title, true));
         $this->_body = $this->addContentGetPointer(new Body($content));
         $this->_footer = $this->addContentGetPointer(new Footer(true));
         if ($footer !== null) {
             $this->_footer->addContent($footer);
         }
     }
-    
-    public function addContent($content) {
+
+    public function addContent($content)
+    {
         //parent::addContent($content);
         return $this->_body->addContent($content);
     }
 
-    public function addFooterContent($content) {
+    public function addFooterContent($content)
+    {
         return $this->_footer->addContent($content);
     }
 
-    public function addFooterButton($button) {
+    public function addFooterButton($button)
+    {
         return $this->_footer->addButton($button);
     }
 
@@ -84,4 +90,3 @@ class Content extends HTML5\Node {
 //        }
 //    }
 }
-

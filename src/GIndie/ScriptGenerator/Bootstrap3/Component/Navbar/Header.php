@@ -35,7 +35,7 @@ class Header extends \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
      */
     public static function brandImage($urlImage, $brandName, $href = "#")
     {
-        return Links::hyperlink($href)->addContent(Images::img($urlImage, $brandName));
+        return Links::hyperlink($href)->addContent(Images::img($urlImage, $brandName)->setAttribute("width", "30"))->addClass("navbar-brand");
     }
 
     /**

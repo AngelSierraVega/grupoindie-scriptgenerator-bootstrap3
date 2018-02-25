@@ -20,7 +20,8 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * @since 2017-01-18
  * @version beta.00.01
  */
-class Header extends HTML5\Node {
+class Header extends HTML5\Node
+{
 
     use Bootstrap3\ContextualBackgrounds;
 
@@ -32,8 +33,10 @@ class Header extends HTML5\Node {
      * @since 2017-01-18
      * @version beta.00.01
      */
-    public function __construct($title, $btnDismiss = true) {
-        parent::__construct("div", false, ["class" => "modal-header"]);
+    public function __construct($title, $btnDismiss = true)
+    {
+        parent::__construct(static::TYPE_DEFAULT, "div", ["class" => "modal-header"]);
+        //parent::__construct("div", false, ["class" => "modal-header"]);
         //$this->setAttribute("class", "modal-header");
         if ($btnDismiss) {
             $btnDismiss = new
