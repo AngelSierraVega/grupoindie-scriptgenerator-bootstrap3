@@ -21,9 +21,32 @@ use GIndie\ScriptGenerator\HTML5\Category\Images;
  * - Created __construct(), $brand, getBrand(), setBrand()
  * @edit SG-BTSP3.00.02 18-02-23
  * - Created brandImage()
+ * @edit SG-BTSP3.00.03 18-02-26
+ * - Created tmpCollapseButton()
  */
 class Header extends \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
 {
+
+    /**
+     * 
+     * @return string
+     * @since SG-BTSP3.00.03
+     */
+    private static function tmpCollapseButton()
+    {
+        \ob_start();
+        ?>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#default-component-navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <?php
+        $out = \ob_get_contents();
+        \ob_end_clean();
+        return $out;
+    }
 
     /**
      * 
@@ -32,6 +55,7 @@ class Header extends \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
      * @param string $href
      * 
      * @return \GIndie\ScriptGenerator\HTML5\Category\Links\Hyperlink
+     * @since SG-BTSP3.00.02
      */
     public static function brandImage($urlImage, $brandName, $href = "#")
     {
@@ -43,10 +67,13 @@ class Header extends \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
      * @param type $content
      * 
      * @since SG-BTSP3.00.01
+     * @edit SG-BTSP3.00.03
+     * - Use tmpCollapseButton()
      */
     public function __construct($brand = null)
     {
         parent::__construct(null, ["class" => "navbar-header"]);
+        $this->addContent(static::tmpCollapseButton());
         if ($brand !== null) {
             $this->setBrand($brand);
         }

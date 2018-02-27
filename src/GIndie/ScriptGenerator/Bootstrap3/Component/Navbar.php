@@ -18,13 +18,59 @@ use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics;
  * @edit SG-BTSP3.00.01
  * - Class extends \GIndie\ScriptGenerator\HTML5\Node
  * - Created uses, __construct(), addContent(), $container
+ * @edit SG-BTSP3.00.02 18-02-25
+ * - Updated __construct()
+ * - Created setNavigation(), $navigation, $collapse
  */
 class Navbar extends \GIndie\ScriptGenerator\HTML5\Node
 {
-    
+
+    /**
+     * @since SG-BTSP3.00.02
+     * @var type 
+     */
+    private $collapse;
 
     /**
      * 
+     * @param type $navigation
+     * @param type $navigationIndex
+     * 
+     * @return \GIndie\ScriptGenerator\Bootstrap3\Component\Navbar
+     * 
+     * @since SG-BTSP3.00.02
+     */
+    public function setNavigation($navigation, $navigationIndex = 0)
+    {
+        switch (true)
+        {
+            case \is_a($navigation, \GIndie\ScriptGenerator\HTML5\Category\Lists\Unordered::class, true):
+            case \is_subclass_of($navigation, \GIndie\ScriptGenerator\HTML5\Category\Lists\Unordered::class):
+                $navigation->addClass("nav navbar-nav");
+                break;
+            default:
+                var_dump($navigation);
+                \trigger_error("todo", \E_USER_ERROR);
+                break;
+        }
+        /**
+         * @todo 
+         * if(\is_null($this->collapse)){
+         * $this->collapse = $this->container->addContentGetPointer(new Navbar\Collapse("default-component-navbar-collapse"));
+         * }
+         */
+        $this->navigation[$navigationIndex] = $this->container->addContentGetPointer($navigation);
+        return $this;
+    }
+
+    /**
+     *
+     * @var array 
+     * @since SG-BTSP3.00.02
+     */
+    private $navigation = [];
+
+    /**
      * @since SG-BTSP3.00.01
      */
     use \GIndie\ScriptGenerator\HTML5\Attribute\GlobalAttributes;
@@ -32,25 +78,25 @@ class Navbar extends \GIndie\ScriptGenerator\HTML5\Node
     use Bootstrap3\BootstrapClass;
 
     /**
-     * 
+     * @param boolean $containerFluid
      * @since SG-BTSP3.00.01
+     * @edit SG-BTSP3.00.02
+     * - Removed param $brand and related functionality
+     * - Added param $containerFluid and related functionality
      */
-    public function __construct($brand = null)
+    public function __construct($containerFluid = true)
     {
         parent::__construct(static::TYPE_DEFAULT, "nav");
         $this->baseClass = "navbar";
         $this->addClass($this->baseClass);
         $this->setContext(static::$COLOR_DEFAULT, false);
-        $this->container = $this->addContentGetPointer(StylesSemantics::div(null, ["class" => "container-fluid"]));
         switch (true)
         {
-            case ($brand == null):
-                break;
-            case \is_bool($brand):
-                $this->setHeader(null);
+            case ($containerFluid === true):
+                $this->container = $this->addContentGetPointer(StylesSemantics::div(null, ["class" => "container-fluid"]));
                 break;
             default:
-                $this->setHeader($brand);
+                $this->container = $this->addContentGetPointer(StylesSemantics::div(null, ["class" => "container"]));
                 break;
         }
     }

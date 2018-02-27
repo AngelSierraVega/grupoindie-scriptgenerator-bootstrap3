@@ -65,10 +65,26 @@ class Content extends HTML5\Node
         }
     }
 
+    public function getHeader()
+    {
+        return $this->_header;
+    }
+
+    public function getBody()
+    {
+        return $this->_body;
+    }
+
+    public function getFooter()
+    {
+        return $this->_footer;
+    }
+
     public function addContent($content)
     {
         //parent::addContent($content);
-        return $this->_body->addContent($content);
+        $this->_body->addContent($content);
+        return $this;
     }
 
     public function addFooterContent($content)
