@@ -17,6 +17,20 @@ namespace GIndie\ScriptGenerator\Bootstrap3;
  */
 class ProjectHandler extends \GIndie\ProjectHandler
 {
+    
+    /**
+     * @since SG-BTSP3.00.0?
+     * @return array
+     */
+    public static function projectClasses()
+    {
+        return [Bootstrap3\Document::class
+            , Bootstrap3\Component\Button::class
+            , Bootstrap3\Component\Dropdown::class
+            , Bootstrap3\Component\Modal::class
+            , Bootstrap3\Component\Panel::class
+        ];
+    }
 
     /**
      * @return string
