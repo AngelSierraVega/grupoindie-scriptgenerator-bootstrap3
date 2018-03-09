@@ -14,10 +14,22 @@ namespace GIndie\ScriptGenerator\Bootstrap3;
  * @version SG-BTSP3.00.00 18-02-24 Empty class created.
  * @edit SG-BTSP3.00.01
  * - Added code from HTML5form
+ * @edit SG-BTSP3.00.02 18-03-09
+ * - Deprecated autoloaderFilename()
  */
 class ProjectHandler extends \GIndie\ProjectHandler
 {
-    
+
+    /**
+     * @return string
+     * @since SG-BTSP3.00.01
+     * @deprecated since SG-BTSP3.00.02
+     */
+    public static function autoloaderFilenameDPR()
+    {
+        return "autoloader.php";
+    }
+
     /**
      * @since SG-BTSP3.00.0?
      * @return array
@@ -30,17 +42,6 @@ class ProjectHandler extends \GIndie\ProjectHandler
             , Bootstrap3\Component\Modal::class
             , Bootstrap3\Component\Panel::class
         ];
-    }
-
-    /**
-     * @return string
-     * @since SG-BTSP3.00.01
-     * @todo
-     * - Deprecate method
-     */
-    public static function autoloaderFilename()
-    {
-        return "autoloader.php";
     }
 
     /**

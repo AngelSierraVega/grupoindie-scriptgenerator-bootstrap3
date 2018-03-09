@@ -9,7 +9,9 @@
  * @subpackage Bootstrap3
  *
  * @version SG-BTSP3.00.00 18-01-18 Empty file created.
- * @version SG-BTSP3.00.01
+ * @edit SG-BTSP3.00.01
+ * @edit SG-BTSP3.00.02 18-03-09
+ * - Renamed file from autoloader.php to AutoloaderBootstrap3.php
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3;
