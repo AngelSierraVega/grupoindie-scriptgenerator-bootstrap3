@@ -23,6 +23,10 @@ use GIndie\ScriptGenerator\Bootstrap3;
 class Header extends HTML5\Node
 {
 
+    /**
+     * @edit 18-03-14
+     */
+    use HTML5\Attribute\GlobalAttributes;
     use Bootstrap3\ContextualBackgrounds;
 
     /**
@@ -32,6 +36,8 @@ class Header extends HTML5\Node
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-18
      * @version beta.00.01
+     * @return \GIndie\ScriptGenerator\HTML5\Category\Basic\Header
+     * @edit 18-03-14
      */
     public function __construct($title, $btnDismiss = true)
     {
@@ -49,7 +55,24 @@ class Header extends HTML5\Node
             $btnDismiss->setAttribute("aria-label", "Cerrar");
             $this->addContent($btnDismiss);
         }
-        $this->addContent(HTML5\Category\Basic::Header(4, $title, "modal-title"));
+        $this->title = $this->addContentGetPointer(HTML5\Category\Basic::Header(4, $title, "modal-title"));
+    }
+
+    /**
+     *
+     * @var string
+     * @since 18-03-14 
+     */
+    protected $title;
+
+    /**
+     * 
+     * @return string
+     * @since 18-03-14
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
 }

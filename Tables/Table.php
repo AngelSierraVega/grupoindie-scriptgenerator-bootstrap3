@@ -14,8 +14,20 @@ namespace GIndie\ScriptGenerator\Bootstrap3\Tables;
  * @subpackage Bootstrap3
  *
  * @version SG-BTSP3.00.00 18-02-24 Empty class created.
+ * @edit SG-BTSP3.00.01 18-03-09
+ * - Class extends \GIndie\ScriptGenerator\HTML5\Tables\Table
+ * - Created __construct()
  */
-class Table
+class Table extends \GIndie\ScriptGenerator\HTML5\Tables\Table
 {
-    //put your code here
+
+    /**
+     * @since SG-BTSP3.00.01
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->addClass("table");
+    }
+
 }

@@ -26,6 +26,11 @@ class Content extends HTML5\Node
 {
 
     /**
+     * @since 18-03-14
+     */
+    use HTML5\Attribute\GlobalAttributes;
+
+    /**
      *
      * @var type 
      */
@@ -65,21 +70,42 @@ class Content extends HTML5\Node
         }
     }
 
+    /**
+     * 
+     * @return type
+     * @since 2017-01-18
+     */
     public function getHeader()
     {
         return $this->_header;
     }
 
+    /**
+     * 
+     * @return type
+     * @since 2017-01-18
+     */
     public function getBody()
     {
         return $this->_body;
     }
 
+    /**
+     * 
+     * @return type
+     * @since 2017-01-18
+     */
     public function getFooter()
     {
         return $this->_footer;
     }
 
+    /**
+     * 
+     * @param type $content
+     * @return $this
+     * @since 2017-01-18
+     */
     public function addContent($content)
     {
         //parent::addContent($content);
@@ -87,22 +113,26 @@ class Content extends HTML5\Node
         return $this;
     }
 
+    /**
+     * 
+     * @param type $content
+     * @return type
+     * @since 2017-01-18
+     */
     public function addFooterContent($content)
     {
         return $this->_footer->addContent($content);
     }
 
+    /**
+     * 
+     * @param type $button
+     * @return type
+     * @since 2017-01-18
+     */
     public function addFooterButton($button)
     {
         return $this->_footer->addButton($button);
     }
 
-//    public function addSubmitButton($name = "Aceptar"){
-//        try {
-//            $btn = new HTML5\Button($name, ["form"=>"gip-modal-form","value"=>"Submit"], HTML5\Button::TYPE_SUBMIT);
-//            $this->_footer->addContent($btn);
-//        } catch (Exception $e) {
-//            displayError($e);
-//        }
-//    }
 }
