@@ -166,7 +166,7 @@ class Panel extends Div
         }
         return $this;
     }
-    
+
     /**
      * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\DML\Node
@@ -238,7 +238,7 @@ class Panel extends Div
         }
         return $this;
     }
-    
+
     /**
      * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\DML\Node

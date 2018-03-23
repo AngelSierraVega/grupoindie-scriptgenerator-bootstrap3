@@ -25,9 +25,10 @@ class Alert extends StylesSemantics\Div
 
     /**
      * @since SG-BTSP3.00.01
+     * @edit 18-03-23
+     * - Removed use Bootstrap3\BootstrapClass;
      */
     use Bootstrap3\ContextualColors;
-    use Bootstrap3\BootstrapClass;
 
     /**
      * 

@@ -12,6 +12,7 @@
 namespace GIndie\ScriptGenerator\Bootstrap3\Component\Panel;
 
 use GIndie\ScriptGenerator\HTML5\Category\Basic;
+use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics;
 use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div;
 
 /**
@@ -46,10 +47,13 @@ class Heading extends Div
      * 
      * @ut_params @ut_params "Title"
      * @ut_str constructString "<div class="panel-heading"><h3 class="panel-title">Title</h3></div>"
+     * @edit 18-03-21
+     * - Added btnGroup
      */
     public function __construct($title = \NULL)
     {
         parent::__construct("", ["class" => "panel-heading"]);
+        $this->btnGroup = $this->addContentGetPointer(StylesSemantics::Div("", ["class" => "btn-group pull-right"]));
         ($title === \NULL || $title === \FALSE ) ?: $this->setTitle($title);
     }
 
@@ -89,5 +93,29 @@ class Heading extends Div
             $this->_title->setTag("h" . $headerLevel);
         }
     }
+
+    /**
+     * @since 18-03-21
+     * @return \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
+     */
+    public function getBtnGroup()
+    {
+        return $this->btnGroup;
+    }
+
+    /**
+     * @since 18-03-21
+     * @return \GIndie\ScriptGenerator\HTML5\Category\Basic\Header
+     */
+    public function getTitle()
+    {
+        return $this->_title;
+    }
+
+    /**
+     * @since 18-03-21
+     * @var \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div 
+     */
+    private $btnGroup;
 
 }
