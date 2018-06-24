@@ -72,10 +72,11 @@ class Navbar extends \GIndie\ScriptGenerator\HTML5\Node
 
     /**
      * @since SG-BTSP3.00.01
+     * @edit 18-??-??
+     * - Removed use Bootstrap3\BootstrapClass;
      */
     use \GIndie\ScriptGenerator\HTML5\Attribute\GlobalAttributes;
     use Bootstrap3\ContextualColors;
-    use Bootstrap3\BootstrapClass;
 
     /**
      * @param boolean $containerFluid

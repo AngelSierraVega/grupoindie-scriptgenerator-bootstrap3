@@ -1,52 +1,46 @@
 <?php
 
-namespace GIndie\ScriptGenerator\Bootstrap3;
-
 /**
- * DVLP-SG3-Bootstrap3 - ProjectHandler
+ * GI-SG3-Bootstrap3-DVLP - ProjectHandler
  *
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
  *
- * @package ScriptGenerator
- * @subpackage Bootstrap3
+ * @package \GIndie\ScriptGenerator\Bootstrap3\Components
  *
- * @version SG-BTSP3.00.00 18-02-24 Empty class created.
- * @edit SG-BTSP3.00.01
+ * @since 18-02-24
+ * @version 0A.F0
+ */
+
+namespace GIndie\ScriptGenerator\Bootstrap3;
+
+/**
+ *
+ * @edit 18-02-24
  * - Added code from HTML5form
- * @edit SG-BTSP3.00.02 18-03-09
+ * @edit 18-03-09
  * - Deprecated autoloaderFilename()
  */
 class ProjectHandler extends \GIndie\ProjectHandler
 {
 
     /**
-     * @return string
-     * @since SG-BTSP3.00.01
-     * @deprecated since SG-BTSP3.00.02
-     */
-    public static function autoloaderFilenameDPR()
-    {
-        return "autoloader.php";
-    }
-
-    /**
-     * @since SG-BTSP3.00.0?
+     * @since 18-02-24
      * @return array
      */
     public static function projectClasses()
     {
-        return [Bootstrap3\Document::class
-            , Bootstrap3\Component\Button::class
-            , Bootstrap3\Component\Dropdown::class
-            , Bootstrap3\Component\Modal::class
-            , Bootstrap3\Component\Panel::class
+        return [Document::class
+            , Component\Button::class
+            , Component\Dropdown::class
+            , Component\Modal::class
+            , Component\Panel::class
         ];
     }
 
     /**
      * @return string
-     * @since SG-BTSP3.00.01
+     * @since 18-02-24
      */
     public static function pathToSourceCode()
     {
@@ -55,7 +49,7 @@ class ProjectHandler extends \GIndie\ProjectHandler
 
     /**
      * @return string
-     * @since SG-BTSP3.00.01
+     * @since 18-02-24
      */
     public static function projectName()
     {
@@ -64,7 +58,7 @@ class ProjectHandler extends \GIndie\ProjectHandler
 
     /**
      * @return string
-     * @since SG-BTSP3.00.01
+     * @since 18-02-24
      */
     public static function projectNamespace()
     {
@@ -73,7 +67,7 @@ class ProjectHandler extends \GIndie\ProjectHandler
 
     /**
      * @return string
-     * @since SG-BTSP3.00.01
+     * @since 18-02-24
      */
     public static function projectVendor()
     {
