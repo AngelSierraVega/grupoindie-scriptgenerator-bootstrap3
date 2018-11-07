@@ -9,7 +9,7 @@
  * @package \GIndie\ScriptGenerator\Bootstrap3\Components
  *
  * @since 18-02-24
- * @version 0A.F0
+ * @version 0A.FF
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3;
@@ -20,8 +20,10 @@ namespace GIndie\ScriptGenerator\Bootstrap3;
  * - Added code from HTML5form
  * @edit 18-03-09
  * - Deprecated autoloaderFilename()
+ * @edit 18-11-07
+ * - Class extends \GIndie\ProjectHandler\AbstractProjectHandler
  */
-class ProjectHandler extends \GIndie\ProjectHandler
+class ProjectHandler extends \GIndie\ProjectHandler\AbstractProjectHandler
 {
 
     /**

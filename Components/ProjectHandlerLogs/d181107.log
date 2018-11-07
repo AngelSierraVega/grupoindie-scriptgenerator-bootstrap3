@@ -1,0 +1,52 @@
+18-06-23:
+18-06-24:
+- Functional Grid
+18-08-14
+- Tooltip helper class (0A.F3)
+
+-------------------------------PROJECT---------------------------------|
+\GIndie\ScriptGenerator\Bootstrap3
+18-11-07 v:00.00 LOC:2738
+ABS(0) CLA(28) INT(1) SCR(1) TRA(3) LOG(2) NDF(0) 
+-------------------------------VERSIONS--------------------------------|
+[0A.00] AlphaCero....| Functional project
+[0B.00] BetaCero.....| Main funcionality
+[0C.00] One..........| Final version
+--------------------------------FILE-----------------------------|--V--|
+[SCR] AutoloaderBootstrap3.php...................................|0B.00|
+[CLA] Grid\Column.php............................................|0A.F0|
+[CLA] Grid\Row.php...............................................|0A.F0|
+[CLA] Grid.php...................................................|0A.F0|
+[CLA] Javascript\Tooltip.php.....................................|0A.F3|
+[INT] Screensizes.php............................................|0A.F0|
+[TRA] BootstrapClass.php.........................................|SG-BTSP3.00.00 18-01-18 Empty trait created.|
+[CLA] Component\Alert.php........................................|SG-BTSP3.00.00 18-02-19 Empty class created.|
+[CLA] Component\Navbar\Collapse.php..............................|SG-BTSP3.00.00 18-02-25 Empty class created.|
+[CLA] Component\Navbar\Header.php................................|SG-BTSP3.00.00 18-02-20 Empty class created.|
+[CLA] Component\Navbar.php.......................................|SG-BTSP3.00.00 18-02-20 Empty class created.|
+[CLA] Component\Panel.php........................................|GIG.BTS3.00 2017-04-23|
+[TRA] ContextualBackgrounds.php..................................|SG-BTSP3.00.00 18-01-18 Empty trait created.|
+[TRA] ContextualColors.php.......................................|SG-BTSP3.00.00 18-01-18 Empty trait created.|
+[CLA] FormInput\FormGroup.php....................................|SG-BTSP3.00.00 18-02-03 Empty class created.|
+[CLA] FormInput.php..............................................|SG-BTSP3.00.00 18-02-03 Empty class created.|
+[CLA] Tables\Cell.php............................................|SG-BTSP3.00.00 18-02-24 Empty [class/trait/interface/file] created.|
+[CLA] Tables\Row.php.............................................|SG-BTSP3.00.00 18-02-24 Empty class created.|
+[CLA] Tables\Table.php...........................................|SG-BTSP3.00.00 18-02-24 Empty class created.|
+[CLA] Tables.php.................................................|SG-BTSP3.00.00 18-02-24 Empty [class/trait/interface/file] created.|
+[CLA] Component\Button.php.......................................||
+[CLA] Component\Dropdown\Toggle.php..............................|beta.00.01|
+[CLA] Component\Dropdown.php.....................................|beta.00.01|
+[CLA] Component\Modal\Body.php...................................|beta.00.01|
+[CLA] Component\Modal\Content.php................................|beta.00.01|
+[CLA] Component\Modal\Footer.php.................................|beta.00.01|
+[CLA] Component\Modal\Header.php.................................|beta.00.01|
+[CLA] Component\Modal.php........................................|beta.00.02|
+[LOG] Components\ProjectHandlerLogs\current.log..................|NDFND|
+[LOG] Components\ProjectHandlerLogs\d181107.log..................|NDFND|
+[CLA] Component\Panel\Body.php...................................|    GIG-BTSP3.00.01|
+[CLA] Component\Panel\Footer.php.................................|    GIG-BTSP3.00.01|
+[CLA] Component\Panel\Heading.php................................|    GIG-BTSP3.00.01|
+[CLA] Document.php...............................................|GIG-BTSP3.00.02|
+[CLA] ProjectHandler.php.........................................|0A.FF|
+-----------------------------------------------------------------------|
+ \GIndie\ScriptGenerator\Bootstrap3 v 00.00
