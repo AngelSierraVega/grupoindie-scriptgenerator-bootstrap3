@@ -72,7 +72,7 @@ class Content extends HTML5\Node
 
     /**
      * 
-     * @return type
+     * @return \GIndie\ScriptGenerator\Bootstrap3\Component\Modal\Header
      * @since 2017-01-18
      */
     public function getHeader()
