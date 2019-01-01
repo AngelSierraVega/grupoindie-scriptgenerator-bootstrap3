@@ -14,7 +14,8 @@ namespace GIndie\ScriptGenerator\Bootstrap3;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-01-18 Empty trait created.
+ * @version 00.B0
+ * @since 18-01-18
  * @edit SG-BTSP3.00.01
  * - Added code from main (?)
  */

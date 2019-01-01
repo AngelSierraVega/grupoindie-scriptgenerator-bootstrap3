@@ -13,7 +13,8 @@
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-02-24 Empty [class/trait/interface/file] created.
+ * @version DEPRECATED
+ * @since 18-02-24
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3;
@@ -21,7 +22,7 @@ namespace GIndie\ScriptGenerator\Bootstrap3;
 /**
  * Description of Tables
  *
- * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
+ * @todo depcatate and remove class
  */
 class Tables
 {

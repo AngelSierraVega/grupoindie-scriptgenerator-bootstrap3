@@ -19,7 +19,8 @@ use GIndie\ScriptGenerator\Bootstrap3\ContextualColors;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  * 
- * @version GIG.BTS3.00 2017-04-23
+ * @version 00.B0
+ * @since 17-04-23
  *
  * @edit SG-BTSP3.00.01 18-02-02
  * - Updated varnames due to PSR-1 violation
@@ -138,10 +139,13 @@ class Panel extends Div
     /**
      * @since SG-BTSP3.00.01
      * @return \GIndie\ScriptGenerator\Bootstrap3\Component\Panel\Heading
+     * @edit 18-12-11
+     * - Return pointer
      */
     public function getHeading()
     {
-        return $this->heading;
+        $rtn = &$this->heading;
+        return $rtn;
     }
 
     /**

@@ -18,7 +18,7 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * 
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-18
- * @version beta.00.01
+ * @version 00.B0
  */
 class Footer extends HTML5\Node
 {
@@ -29,7 +29,6 @@ class Footer extends HTML5\Node
      * 
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-18
-     * @version beta.00.01
      * @param boolean $btnDismiss
      */
     public function __construct($btnDismiss = false)

@@ -10,8 +10,10 @@ namespace GIndie\ScriptGenerator\Bootstrap3\Component\Navbar;
  *
  * @package ScriptGenerator
  * @subpackage Bootstrap3
+ * @since 18-02-25
+ * 
  *
- * @version SG-BTSP3.00.00 18-02-25 Empty class created.
+ * @version 00.B0
  * @edit SG-BTSP3.00.01
  * - Class extends \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
  * - Created __construct()

@@ -18,7 +18,7 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * 
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-18
- * @version beta.00.01
+ * @version 00.B0
  */
 class Body extends HTML5\Node
 {
@@ -28,7 +28,6 @@ class Body extends HTML5\Node
      * @param type $content
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-18
-     * @version beta.00.01
      */
     public function __construct($content = null)
     {

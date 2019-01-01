@@ -11,7 +11,8 @@
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-02-24 Empty [class/trait/interface/file] created.
+ * @version 00.B0
+ * @since 18-02-24
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3\Tables;
@@ -21,7 +22,7 @@ namespace GIndie\ScriptGenerator\Bootstrap3\Tables;
  *
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  */
-class Cell
+class Cell extends \GIndie\ScriptGenerator\HTML5\Tables\Cell
 {
     //put your code here
 }

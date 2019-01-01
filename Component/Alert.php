@@ -14,7 +14,8 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-02-19 Empty class created.
+ * @version 00.B0
+ * @since 18-02-19
  * @edit SG-BTSP3.00.01
  * - Class extends from \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
  * - Class uses ContextualColors, BootstrapClass

@@ -15,7 +15,8 @@ use GIndie\ScriptGenerator\HTML5\Category\Images;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-02-20 Empty class created.
+ * @version 00.B0
+ * @since 18-02-20
  * @edit SG-BTSP3.00.01
  * - Class extends \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
  * - Created __construct(), $brand, getBrand(), setBrand()

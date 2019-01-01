@@ -8,7 +8,7 @@
  * @package \GIndie\ScriptGenerator\Bootstrap3
  * 
  * @since 18-01-18
- * @version 0B.00
+ * @version 00.B0
  *
  * @edit 18-03-09
  * - Renamed file from autoloader.php to AutoloaderBootstrap3.php

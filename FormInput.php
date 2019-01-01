@@ -19,7 +19,8 @@ use \GIndie\ScriptGenerator\HTML5\Category\FormInput as HTML5FormInput;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-02-03 Empty class created.
+ * @version 00.B0
+ * @since 18-02-03
  * @edit SG-BTSP3.00.01
  * - Extend from HTML5FormInput
  * - Created form-control inputs

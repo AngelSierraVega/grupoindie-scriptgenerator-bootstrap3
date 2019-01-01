@@ -9,7 +9,7 @@
  * @package \GIndie\ScriptGenerator\Bootstrap3
  *
  * @since 18-08-14
- * @version 0A.F3
+ * @version 00.BF
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3\Javascript;

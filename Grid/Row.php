@@ -9,7 +9,7 @@
  * @package \GIndie\ScriptGenerator\Bootstrap3
  *
  * @since 18-06-23
- * @version 0A.F0
+ * @version 00.BB
  * @todo
  * - Class unit test
  * - Complete class documentation
@@ -36,17 +36,6 @@ class Row extends Div implements Screensizes
         $this->addClass("row");
     }
 
-    /**
-     * @since 18-06-24
-     * @param mixed $content
-     * @deprecated since 18-06-24
-     */
-    public function addContent($content)
-    {
-        \trigger_error("Use addColumn() or addColumnGP() instead",
-                       \E_USER_DEPRECATED);
-        return parent::addContent($content);
-    }
 
     /**
      * @since 18-06-24

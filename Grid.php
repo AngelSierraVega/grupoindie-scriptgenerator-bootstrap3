@@ -9,7 +9,7 @@
  * @package \GIndie\ScriptGenerator\Bootstrap3
  *
  * @since 18-06-23
- * @version 0A.F0
+ * @version 00.AF
  * @todo
  * - Class unit test
  * - Complete class documentation

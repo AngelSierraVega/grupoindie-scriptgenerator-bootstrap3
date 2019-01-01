@@ -20,7 +20,7 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * 
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-18
- * @version beta.00.01
+ * @version 00.B0
  */
 class Content extends HTML5\Node
 {
@@ -55,7 +55,6 @@ class Content extends HTML5\Node
      * @param type $footer
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-18
-     * @version beta.00.01
      */
     public function __construct($title, $content = null, $footer = null)
     {

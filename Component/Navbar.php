@@ -14,7 +14,9 @@ use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-02-20 Empty class created.
+ * @since 18-02-20
+ * @version 00.B0
+ * 
  * @edit SG-BTSP3.00.01
  * - Class extends \GIndie\ScriptGenerator\HTML5\Node
  * - Created uses, __construct(), addContent(), $container

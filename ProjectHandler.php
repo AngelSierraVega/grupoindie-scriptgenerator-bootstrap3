@@ -9,7 +9,7 @@
  * @package \GIndie\ScriptGenerator\Bootstrap3\Components
  *
  * @since 18-02-24
- * @version 0A.FF
+ * @version 00.B1
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3;
@@ -25,6 +25,28 @@ namespace GIndie\ScriptGenerator\Bootstrap3;
  */
 class ProjectHandler extends \GIndie\ProjectHandler\AbstractProjectHandler
 {
+
+    /**
+     * 
+     * @return string
+     */
+    public static function versions()
+    {
+        $rtnArray = [];
+        //AlphaCero
+        $rtnArray[\hexdec("00.A0")]["code"] = "AlphaCero";
+        $rtnArray[\hexdec("00.A0")]["description"] = "Functional project";
+        $rtnArray[\hexdec("00.A0")]["threshold"] = "00.A0";
+        //BetaCero
+        $rtnArray[\hexdec("00.B0")]["code"] = "BetaCero";
+        $rtnArray[\hexdec("00.B0")]["description"] = "Main funcionality";
+        $rtnArray[\hexdec("00.B0")]["threshold"] = "00.B0";
+        //One
+        $rtnArray[\hexdec("01.00")]["code"] = "One";
+        $rtnArray[\hexdec("01.00")]["description"] = "Final version";
+        $rtnArray[\hexdec("01.00")]["threshold"] = "01.00";
+        return $rtnArray;
+    }
 
     /**
      * @since 18-02-24

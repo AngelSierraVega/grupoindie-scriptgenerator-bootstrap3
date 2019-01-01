@@ -23,8 +23,8 @@ use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div;
  * 
  * @copyright   (c) 2017 Angel Sierra Vega. Grupo INDIE.
  *
- * @version     GIG-BTSP3.00.01
- * @since       2017-05-20
+ * @version 00.BA
+ * @since 17-05-20
  * @author      Angel Sierra Vega <angel.sierra@grupoindie.com>
  * 
  * 
@@ -97,10 +97,13 @@ class Heading extends Div
     /**
      * @since 18-03-21
      * @return \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
+     * @edit 18-12-11
+     * - Return pointer
      */
     public function getBtnGroup()
     {
-        return $this->btnGroup;
+        $rtn = &$this->btnGroup;
+        return $rtn;
     }
 
     /**

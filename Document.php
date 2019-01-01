@@ -6,7 +6,7 @@
  *
  * @package Bootstrap3
  *
- * @version GIG-BTSP3.00.02
+ * @version 00.B0
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3;
@@ -32,7 +32,6 @@ class Document extends HTML5\Document
      * @param string|null $pathToJS
      * 
      * @since GIG-BTSP3.00.00
-     * @version GIG-BTSP3.00.02
      * 
      * @ut_str construct "<!DOCTYPE html><html lang="en"><head charset="UTF-8"><title></title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link></head><body><script>https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js</script><script integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js</script></body></html>"
      * 

@@ -17,7 +17,8 @@ use \GIndie\ScriptGenerator\HTML5;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-02-03 Empty class created.
+ * @version 00.B0
+ * @since 18-02-03
  * @edit SG-BTSP3.00.01
  * - Extend from Div
  * - Created instance(), __construct(), getInput(), getLabel(), $input, $label

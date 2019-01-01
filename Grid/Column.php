@@ -9,7 +9,7 @@
  * @package \GIndie\ScriptGenerator\Bootstrap3
  *
  * @since 18-06-23
- * @version 0A.F0
+ * @version 00.BB
  * @todo
  * - Class unit test
  * - Complete class documentation
@@ -30,12 +30,13 @@ class Column extends Div implements Screensizes
     /**
      * 18-06-23
      * @param string $screenSize
-     * @param int $colSize
+     * @param int $columnSize
+     * @edit 18-12-07
      */
-    public function __construct($screenSize, $colSize)
+    public function __construct($screenSize, $columnSize)
     {
         parent::__construct();
-        $this->addSize($screenSize, $colSize);
+        $this->addSize($screenSize, $columnSize);
     }
 
     /**

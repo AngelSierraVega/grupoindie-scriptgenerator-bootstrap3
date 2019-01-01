@@ -1,12 +1,15 @@
 <?php
 
-/*
- * Copyright (C) 2016 Angel Sierra Vega. Grupo INDIE.
+/**
+ * GI-SG3-Bootstrap3-DVLP - Screensizes
  *
- * This software is protected under GNU: you can use, study and modify it
- * but not distribute it under the terms of the GNU General Public License 
- * as published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
+ * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
+ * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
+ *
+ * @package \GIndie\ScriptGenerator\Bootstrap3\Component
+ *
+ * @since 16
+ * @version 00.B0
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3\Component;
@@ -14,6 +17,9 @@ namespace GIndie\ScriptGenerator\Bootstrap3\Component;
 use GIndie\ScriptGenerator\Bootstrap3\ContextualColors;
 use GIndie\ScriptGenerator\HTML5\Category\FormInput;
 
+/**
+ * 
+ */
 class Button extends FormInput\Button {
 
     use ContextualColors;

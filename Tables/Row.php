@@ -13,7 +13,8 @@ namespace GIndie\ScriptGenerator\Bootstrap3\Tables;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version SG-BTSP3.00.00 18-02-24 Empty class created.
+ * @version 00.B0
+ * @since 18-02-24
  * @edit SG-BTSP3.00.01 18-03-09
  * - Class extends \GIndie\ScriptGenerator\HTML5\Tables\Row
  * - Use ContextualColors

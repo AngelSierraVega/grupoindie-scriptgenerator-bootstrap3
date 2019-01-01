@@ -8,7 +8,8 @@ use GIndie\ScriptGenerator\HTML5 as HTML5;
  * 
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-18
- * @version beta.00.02 2017-02-08
+ * @version 00.B0
+ * @since 17-02-08
  * @edit SG-BTSP3.00.01 18-02-25
  * - Updated __construct()
  * - Created getModalContent(), getModalDialog()
@@ -24,7 +25,6 @@ class Modal extends HTML5\Category\StylesSemantics\Div
      * 
      * @ut_str "<div tabindex="-1" role="dialog" class="modal fade"><div role="document" class="modal-dialog"><div class="modal-content"></div></div></div>"
      * 
-     * @version beta.00.02
      * @edit SG-BTSP3.00.01
      */
     public function __construct($fade = true, $tabindex = "-1", $role = "dialog")
@@ -63,7 +63,6 @@ class Modal extends HTML5\Category\StylesSemantics\Div
      * @var \GIndie\ScriptGenerator\Bootstrap3\Component\Modal\Content $modalContent
      * 
      * @since 2017-02-08
-     * @version beta.00.02
      * @edit SG-BTSP3.00.01
      * - Renamed due to PSR-1 violation
      */
@@ -73,7 +72,6 @@ class Modal extends HTML5\Category\StylesSemantics\Div
      * 
      * @var type $modalDialog
      * @since 2017-02-08
-     * @version beta.00.02
      * @edit SG-BTSP3.00.01
      * - Renamed due to PSR-1 violation
      */

@@ -1,12 +1,15 @@
 <?php
 
-/*
- * Copyright (C) 2016 Angel Sierra Vega. Grupo INDIE.
+/**
+ * GI-SG3-Bootstrap3-DVLP - Screensizes
  *
- * This software is protected under GNU: you can use, study and modify it
- * but not distribute it under the terms of the GNU General Public License 
- * as published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
+ * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
+ * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
+ *
+ * @package \GIndie\ScriptGenerator\Bootstrap3\Component
+ *
+ * @since 17-01-04
+ * @version 00.B0
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3\Component;
@@ -16,9 +19,6 @@ use GIndie\ScriptGenerator\HTML5\Category\Lists;
 
 /**
  * 
- * @version beta.00.01
- * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
- * @since 2017-01-04
  */
 class Dropdown extends StylesSemantics\Div
 {
@@ -39,7 +39,6 @@ class Dropdown extends StylesSemantics\Div
      * 
      * @param type $name
      * @param array $listElements
-     * @version beta.00.01
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-04
      * @ut_params2 construct "brandName" ["element"=>"test"]
@@ -62,7 +61,6 @@ class Dropdown extends StylesSemantics\Div
      * 
      * @param type $element
      * @return type
-     * @version beta.00.01
      * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
      * @since 2017-01-04
      * 
