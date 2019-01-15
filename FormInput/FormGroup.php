@@ -17,7 +17,7 @@ use \GIndie\ScriptGenerator\HTML5;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version 00.B0
+ * @version 00.B3
  * @since 18-02-03
  * @edit SG-BTSP3.00.01
  * - Extend from Div
@@ -41,12 +41,18 @@ class FormGroup extends HTML5\Category\StylesSemantics\Div
      * @since SG-BTSP3.00.01
      * @param string $label
      * @param \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input $input
+     * @edit 19-01-30
+     * - Added style cursor:pointer; to label
      */
     public function __construct($label, HTML5\Category\FormInput\Input $input)
     {
         parent::__construct(null, ["class" => "form-group"]);
         $this->label = $this->addContentGetPointer(HTML5\Category\FormInput::label($label));
+        $this->label->setAttribute("style", "cursor:pointer;");
         $this->input = $this->addContentGetPointer($input);
+        if(!\is_null($this->input->getId())){
+            $this->label->setAttribute("for", $this->input->getId());
+        }
     }
 
     /**

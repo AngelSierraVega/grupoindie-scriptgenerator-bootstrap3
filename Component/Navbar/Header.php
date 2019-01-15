@@ -15,7 +15,7 @@ use GIndie\ScriptGenerator\HTML5\Category\Images;
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version 00.B0
+ * @version 00.B3
  * @since 18-02-20
  * @edit SG-BTSP3.00.01
  * - Class extends \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
@@ -57,10 +57,12 @@ class Header extends \GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div
      * 
      * @return \GIndie\ScriptGenerator\HTML5\Category\Links\Hyperlink
      * @since SG-BTSP3.00.02
+     * @edit 19-02-02
+     * - Heigh attribute set to 20
      */
     public static function brandImage($urlImage, $brandName, $href = "#")
     {
-        return Links::hyperlink($href)->addContent(Images::img($urlImage, $brandName)->setAttribute("width", "30"))->addClass("navbar-brand");
+        return Links::hyperlink($href)->addContent(Images::img($urlImage, $brandName)->setAttribute("height", "20"))->addClass("navbar-brand");
     }
 
     /**

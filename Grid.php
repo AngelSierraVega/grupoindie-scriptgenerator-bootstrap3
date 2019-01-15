@@ -109,7 +109,7 @@ class Grid extends Div implements Screensizes
      * @since 18-06-24
      * 
      * @param null|int $index
-     * @return GIndie\ScriptGenerator\Bootstrap3\Grid\Row
+     * @return \GIndie\ScriptGenerator\Bootstrap3\Grid\Row
      */
     public function getRow($index = null)
     {
