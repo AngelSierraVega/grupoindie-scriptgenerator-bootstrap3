@@ -1,49 +1,9 @@
-GOODBYE 2018
+18-12-31 to 19-01-??
 
--------------------------------PROJECT---------------------------------|
-\GIndie\ScriptGenerator\Bootstrap3
-18-12-31 v:00.B1 LOC:2839
-ABS(0) CLA(28) INT(1) SCR(1) TRA(3) LOG(2) NDF(1) 
--------------------------------VERSIONS--------------------------------|
-[00.A0] AlphaCero....| Functional project
-[00.B0] BetaCero.....| Main funcionality
-[01.00] One..........| Final version
---------------------------------FILE-----------------------------|--V--|
-[SCR] AutoloaderBootstrap3.php...................................|00.B0|
-[CLA] Grid\Column.php............................................|00.BB|
-[CLA] Grid\Row.php...............................................|00.BB|
-[CLA] Grid.php...................................................|00.AF|
-[CLA] Javascript\Tooltip.php.....................................|00.BF|
-[INT] Screensizes.php............................................|00.B3|
-[TRA] BootstrapClass.php.........................................|00.B0|
-[CLA] Component\Alert.php........................................|00.B0|
-[CLA] Component\Navbar\Collapse.php..............................|00.B0|
-[CLA] Component\Navbar\Header.php................................|00.B0|
-[CLA] Component\Navbar.php.......................................|00.B0|
-[CLA] Component\Panel.php........................................|00.B0|
-[TRA] ContextualBackgrounds.php..................................|00.B0|
-[TRA] ContextualColors.php.......................................|00.B0|
-[CLA] FormInput\FormGroup.php....................................|00.B0|
-[CLA] FormInput.php..............................................|00.B0|
-[CLA] Tables\Cell.php............................................|00.B0|
-[CLA] Tables\Row.php.............................................|00.B0|
-[CLA] Tables\Table.php...........................................|00.B0|
-[CLA] Tables.php.................................................|DPRCT|
-[CLA] Component\Button.php.......................................|00.B0|
-[CLA] Component\Dropdown\Toggle.php..............................|00.B0|
-[CLA] Component\Dropdown.php.....................................|00.B0|
-[CLA] Component\Modal\Body.php...................................|00.B0|
-[CLA] Component\Modal\Content.php................................|00.B0|
-[CLA] Component\Modal\Footer.php.................................|00.B0|
-[CLA] Component\Modal\Header.php.................................|00.B0|
-[CLA] Component\Modal.php........................................|00.B0|
-[LOG] Components\ProjectHandlerLogs\current.log..................|NDFND|
-[LOG] Components\ProjectHandlerLogs\d181107.log..................|NDFND|
-[NDF] Components\ProjectHandlerLogs\v00B1........................|NDFND|
-[CLA] Component\Panel\Body.php...................................|00.B0|
-[CLA] Component\Panel\Footer.php.................................|00.B0|
-[CLA] Component\Panel\Heading.php................................|00.BA|
-[CLA] Document.php...............................................|00.B0|
-[CLA] ProjectHandler.php.........................................|00.B1|
------------------------------------------------------------------------|
- \GIndie\ScriptGenerator\Bootstrap3 v 00.B1
+19-01-15: 
+- Created Instance\Button\DropdownSingle
+- Created Instance\Button\Group
+
+
+
+DOING Upgraded project structure (DataDefinition\Instance) (00.C0)
