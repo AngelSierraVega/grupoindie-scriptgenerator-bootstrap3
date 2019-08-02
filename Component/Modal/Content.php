@@ -21,14 +21,11 @@ use GIndie\ScriptGenerator\Bootstrap3;
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-18
  * @version 00.B0
+ * @edit 19-04-17
+ * - Deprecated use of GlobalAttributes
  */
 class Content extends HTML5\Node
 {
-
-    /**
-     * @since 18-03-14
-     */
-    use HTML5\Attribute\GlobalAttributes;
 
     /**
      *

@@ -74,6 +74,8 @@ class Heading extends Div
      * 
      * @param   mixed $title
      * @param   int $headerLevel 1 thru 6 to specify the header level (h1,h2...)
+     * @edit 19-07-29
+     * - Use removeContents() instead of removeContent()
      */
     public function setTitle($title, $headerLevel = 3)
     {
@@ -88,7 +90,7 @@ class Heading extends Div
             //unset($this->_title);
 //            $this->_title = Basic::Header(5,$title);
 //            $this->_title->addClass("panel-title2");
-            $this->_title->removeContent();
+            $this->_title->removeContents();
             $this->_title->addContent($title);
             $this->_title->setTag("h" . $headerLevel);
         }

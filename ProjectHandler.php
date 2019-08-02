@@ -41,6 +41,10 @@ class ProjectHandler extends \GIndie\ProjectHandler\AbstractProjectHandler
         $rtnArray[\hexdec("00.B0")]["code"] = "BetaCero";
         $rtnArray[\hexdec("00.B0")]["description"] = "Main funcionality";
         $rtnArray[\hexdec("00.B0")]["threshold"] = "00.B0";
+        //DOING
+        $rtnArray[\hexdec("00.C0")]["code"] = "DOING";
+        $rtnArray[\hexdec("00.C0")]["description"] = "Upgraded project structure (DataDefinition\Instance)";
+        $rtnArray[\hexdec("00.C0")]["threshold"] = "00.C0";
         //One
         $rtnArray[\hexdec("01.00")]["code"] = "One";
         $rtnArray[\hexdec("01.00")]["description"] = "Final version";

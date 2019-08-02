@@ -6,7 +6,7 @@
 
 namespace GIndie\ScriptGenerator\Bootstrap3\Component;
 
-use GIndie\ScriptGenerator\DML\Node;
+use GIndie\ScriptGenerator\DML;
 use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div;
 use GIndie\ScriptGenerator\Bootstrap3\ContextualColors;
 
@@ -153,6 +153,7 @@ class Panel extends Div
      * @param type $headingBody
      * @return $this
      * @edit SG-BTSP3.00.01
+     * @edit 19-06-10
      */
     public function setHeadingBody($headingBody)
     {
@@ -160,12 +161,12 @@ class Panel extends Div
         switch (true)
         {
             case (true === $headingBody):
-                $this->headingBody = $this->addContentGetPointer(Node::contentOnly([]));
+                $this->headingBody = $this->addContentGetPointer(DML\Factory::contentOnly([]));
                 break;
             case (false === $headingBody):
                 break;
             default:
-                $this->headingBody = $this->addContentGetPointer(Node::contentOnly($headingBody));
+                $this->headingBody = $this->addContentGetPointer(DML\Factory::contentOnly($headingBody));
                 break;
         }
         return $this;
@@ -228,15 +229,15 @@ class Panel extends Div
         switch (\TRUE)
         {
             case (\TRUE === $bodyFooter):
-                $this->bodyFooter = $this->addContentGetPointer(Node::ContentOnly([]));
+                $this->bodyFooter = $this->addContentGetPointer(DML\Factory::ContentOnly([]));
                 break;
             case (\FALSE === $bodyFooter):
                 break;
             default:
                 if (\is_array($bodyFooter)) {
-                    $this->bodyFooter = $this->addContentGetPointer(Node::contentOnly($bodyFooter));
+                    $this->bodyFooter = $this->addContentGetPointer(DML\Factory::contentOnly($bodyFooter));
                 } else {
-                    $this->bodyFooter = $this->addContentGetPointer(Node::contentOnly([$bodyFooter]));
+                    $this->bodyFooter = $this->addContentGetPointer(DML\Factory::contentOnly([$bodyFooter]));
                 }
                 break;
         }

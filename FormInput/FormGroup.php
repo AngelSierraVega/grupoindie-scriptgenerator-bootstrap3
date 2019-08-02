@@ -29,28 +29,35 @@ class FormGroup extends HTML5\Category\StylesSemantics\Div
     /**
      * @since SG-BTSP3.00.01
      * @param string $label
-     * @param \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input $input
+     * @param mixed $input
      * @return \GIndie\ScriptGenerator\Bootstrap3\FormInput\FormGroup
+     * @edit 19-04-04
      */
-    public static function instance($label, HTML5\Category\FormInput\Input $input)
+    public static function instance($label, $input)
     {
+
         return new \GIndie\ScriptGenerator\Bootstrap3\FormInput\FormGroup($label, $input);
     }
 
     /**
      * @since SG-BTSP3.00.01
      * @param string $label
-     * @param \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input $input
+     * @param mixed $input
      * @edit 19-01-30
      * - Added style cursor:pointer; to label
+     * @edit 19-04-04
      */
-    public function __construct($label, HTML5\Category\FormInput\Input $input)
+    public function __construct($label, $input)
     {
         parent::__construct(null, ["class" => "form-group"]);
+        if (!is_subclass_of($input, HTML5\Category\FormElement\Input::class, false)) {
+            \trigger_error("Variable input debe ser de tipo " . HTML5\Category\FormElement\Input::class,
+                \E_USER_ERROR);
+        }
         $this->label = $this->addContentGetPointer(HTML5\Category\FormInput::label($label));
         $this->label->setAttribute("style", "cursor:pointer;");
         $this->input = $this->addContentGetPointer($input);
-        if(!\is_null($this->input->getId())){
+        if (!\is_null($this->input->getId())) {
             $this->label->setAttribute("for", $this->input->getId());
         }
     }

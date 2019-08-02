@@ -44,10 +44,11 @@ class Navbar extends \GIndie\ScriptGenerator\HTML5\Node
      */
     public function setNavigation($navigation, $navigationIndex = 0)
     {
-        switch (true)
-        {
-            case \is_a($navigation, \GIndie\ScriptGenerator\HTML5\Category\Lists\Unordered::class, true):
-            case \is_subclass_of($navigation, \GIndie\ScriptGenerator\HTML5\Category\Lists\Unordered::class):
+        switch (true) {
+            case \is_a($navigation, \GIndie\ScriptGenerator\HTML5\Category\Lists\Unordered::class,
+                    true):
+            case \is_subclass_of($navigation,
+                    \GIndie\ScriptGenerator\HTML5\Category\Lists\Unordered::class):
                 $navigation->addClass("nav navbar-nav");
                 break;
             default:
@@ -76,8 +77,9 @@ class Navbar extends \GIndie\ScriptGenerator\HTML5\Node
      * @since SG-BTSP3.00.01
      * @edit 18-??-??
      * - Removed use Bootstrap3\BootstrapClass;
+     * @edit 19-04-17
+     * - Removed use of GlobalAttributes
      */
-    use \GIndie\ScriptGenerator\HTML5\Attribute\GlobalAttributes;
     use Bootstrap3\ContextualColors;
 
     /**
@@ -93,13 +95,14 @@ class Navbar extends \GIndie\ScriptGenerator\HTML5\Node
         $this->baseClass = "navbar";
         $this->addClass($this->baseClass);
         $this->setContext(static::$COLOR_DEFAULT, false);
-        switch (true)
-        {
+        switch (true) {
             case ($containerFluid === true):
-                $this->container = $this->addContentGetPointer(StylesSemantics::div(null, ["class" => "container-fluid"]));
+                $this->container = $this->addContentGetPointer(StylesSemantics::div(null,
+                                ["class" => "container-fluid"]));
                 break;
             default:
-                $this->container = $this->addContentGetPointer(StylesSemantics::div(null, ["class" => "container"]));
+                $this->container = $this->addContentGetPointer(StylesSemantics::div(null,
+                                ["class" => "container"]));
                 break;
         }
     }
