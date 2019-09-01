@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * Copyright (C) 2017 Angel Sierra Vega. Grupo INDIE.
  *
  * This software is protected under GNU: you can use, study and modify it
@@ -19,6 +19,8 @@ use GIndie\ScriptGenerator\Bootstrap3;
 /**
  * 
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
+ * @license file://LICENSE MIT License
+ * 
  * @since 2017-01-18
  * @version 00.B0
  * @edit 19-04-17

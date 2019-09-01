@@ -3,6 +3,7 @@
 /**
  * GIG-DML-HTML5-Bootstrap3 - Document 2016-12-28
  * @copyright (C) 2017 Angel Sierra Vega. Grupo INDIE.
+ * @license file://LICENSE MIT License
  *
  * @package Bootstrap3
  *

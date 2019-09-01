@@ -1,4 +1,8 @@
 19-08-02 to 19-??-??
+19-09-01: v00B3.1
+- Added netbeans project
+- Added license tag on files
+
 @todo Upgrade docblock
 @todo DataDefinitionBTSTRP3
 DOING Upgraded project structure (DataDefinition\Instance) (00.C0)

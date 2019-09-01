@@ -1,0 +1,19 @@
+<#assign licenseFirst = "/**">
+<#assign licensePrefix = " * ">
+<#assign licenseLast = " */">
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}${project.displayName} - ${name}
+${licensePrefix?replace(" +$", "", "r")}
+${licensePrefix}@author Angel Sierra Vega <angel.sierra@grupoindie.com>
+${licensePrefix}@copyright (c) ${date?date?string("yyyy")} Angel Sierra Vega. Grupo INDIE.
+${licensePrefix}@license LICENCE MIT License
+${licensePrefix?replace(" +$", "", "r")}
+${licensePrefix}@package GIndie\ScriptGenerator\Bootstrap3
+${licensePrefix?replace(" +$", "", "r")}
+${licensePrefix}@since ${date?date?string("yy-MM-dd")}
+${licensePrefix}@version 00.00
+<#if licenseLast??>
+${licenseLast}
+</#if>

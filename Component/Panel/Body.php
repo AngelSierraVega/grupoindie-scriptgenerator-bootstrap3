@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * Copyright (C) 2017 Angel Sierra Vega. Grupo INDIE.
  *
  * This software is protected under GNU: you can use, study and modify it
@@ -20,6 +20,7 @@ use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div;
  * @category    ComponentLibs
  * 
  * @copyright   (c) 2017 Angel Sierra Vega. Grupo INDIE.
+ * @license file://LICENSE MIT License
  *
  * @version 00.B0
  * @since 17-05-20

@@ -22,6 +22,7 @@ use GIndie\ScriptGenerator\HTML5\Category\StylesSemantics\Div;
  * @category    ComponentLibs
  * 
  * @copyright   (c) 2017 Angel Sierra Vega. Grupo INDIE.
+ * @license file://LICENSE MIT License
  *
  * @version 00.BA
  * @since 17-05-20
