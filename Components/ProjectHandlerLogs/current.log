@@ -2,6 +2,8 @@
 19-09-01: v00B3.1
 - Added netbeans project
 - Added license tag on files
+19-09-24_ v00B3.2
+- Se agregó clase funcional Javascript\TogglableTabs
 
 @todo Upgrade docblock
 @todo DataDefinitionBTSTRP3
