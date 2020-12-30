@@ -1,4 +1,11 @@
-20-12-30 a ???
+19-08-02 to 20-12-30
+19-09-01: v00B3.1
+- Added netbeans project
+- Added license tag on files
+19-09-24_ v00B3.2
+- Se agregó clase funcional Javascript\TogglableTabs
+20-12-30 v00B4
+- Uploaded to hithub
 
 @todo Upgrade docblock
 @todo DataDefinitionBTSTRP3

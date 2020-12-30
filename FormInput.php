@@ -14,13 +14,13 @@ use \GIndie\ScriptGenerator\HTML5\Category\FormInput as HTML5FormInput;
  * Description of FormInput
  *
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
- * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
- * @license file://LICENSE MIT License
+ * @copyright (CC) 2020 Angel Sierra Vega. Grupo INDIE.
+ * @license file://LICENSE
  *
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version 00.B0
+ * @version 00.B4
  * @since 18-02-03
  * @edit SG-BTSP3.00.01
  * - Extend from HTML5FormInput
@@ -48,6 +48,15 @@ class FormInput extends HTML5FormInput
     public static function inputDate()
     {
         return parent::inputDate()->addClass("form-control");
+    }
+
+    /**
+     * @since 19-12-22
+     * @return \GIndie\ScriptGenerator\HTML5\Category\FormInput\Input\Date
+     */
+    public static function inputDateTimeLocal()
+    {
+        return parent::inputDateTimeLocal()->addClass("form-control");
     }
 
     /**

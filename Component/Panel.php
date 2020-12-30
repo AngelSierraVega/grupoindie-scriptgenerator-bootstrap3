@@ -14,8 +14,8 @@ use GIndie\ScriptGenerator\Bootstrap3\ContextualColors;
  * Description of Panel
  * 
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
- * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
- * @license file://LICENSE MIT License
+ * @copyright (CC) 2020 Angel Sierra Vega. Grupo INDIE.
+ * @license file://LICENSE
  *
  * @package ScriptGenerator
  * @subpackage Bootstrap3

@@ -5,12 +5,12 @@
  *
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @copyright (c) 2019 Angel Sierra Vega. Grupo INDIE.
- * @license file://LICENSE MIT License
+ * @license file://LICENSE
  *
  * @package GIndie\ScriptGenerator\Bootstrap3
  *
  * @since 19-02-04
- * @version DOING
+ * @version 00.B4
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3\Instance;

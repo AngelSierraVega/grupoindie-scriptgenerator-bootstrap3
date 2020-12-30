@@ -12,13 +12,13 @@ use \GIndie\ScriptGenerator\HTML5;
  * Description of FormGroup
  *
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
- * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
- * @license file://LICENSE MIT License
+ * @copyright (CC) 2020 Angel Sierra Vega. Grupo INDIE.
+ * @license file://LICENSE
  *
  * @package ScriptGenerator
  * @subpackage Bootstrap3
  *
- * @version 00.B3
+ * @version 00.B4
  * @since 18-02-03
  * @edit SG-BTSP3.00.01
  * - Extend from Div
@@ -51,9 +51,15 @@ class FormGroup extends HTML5\Category\StylesSemantics\Div
     public function __construct($label, $input)
     {
         parent::__construct(null, ["class" => "form-group"]);
-        if (!is_subclass_of($input, HTML5\Category\FormElement\Input::class, false)) {
-            \trigger_error("Variable input debe ser de tipo " . HTML5\Category\FormElement\Input::class,
-                \E_USER_ERROR);
+//        if(\is_a($input, InputGroup::class, false)){
+//            $input->setAttribute("class", "TESTl");
+//        }
+        if (\is_a($input, InputGroup::class, false)) {
+            //$input->setAttribute("class", "TEST2");
+        } else if (!is_subclass_of($input, HTML5\Category\FormElement\Input::class, false)) {
+//            \trigger_error("Variable input debe ser de tipo " . HTML5\Category\FormElement\Input::class,
+//                \E_USER_ERROR);
+            $input->setAttribute("class", "form-control");
         }
         $this->label = $this->addContentGetPointer(HTML5\Category\FormInput::label($label));
         $this->label->setAttribute("style", "cursor:pointer;");

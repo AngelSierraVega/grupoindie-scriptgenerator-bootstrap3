@@ -4,13 +4,13 @@
  * GI-SG3-Bootstrap3-DVLP - ProjectHandler
  *
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
- * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
- * @license file://LICENSE MIT License
+ * @copyright (CC) 2020 Angel Sierra Vega. Grupo INDIE.
+ * @license file://LICENSE
  *
  * @package \GIndie\ScriptGenerator\Bootstrap3\Components
  *
  * @since 18-02-24
- * @version 00.B1
+ * @version 00.B4
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3;
@@ -42,10 +42,14 @@ class ProjectHandler extends \GIndie\ProjectHandler\AbstractProjectHandler
         $rtnArray[\hexdec("00.B0")]["code"] = "BetaCero";
         $rtnArray[\hexdec("00.B0")]["description"] = "Main funcionality";
         $rtnArray[\hexdec("00.B0")]["threshold"] = "00.B0";
+        //BetaCuatro
+        $rtnArray[\hexdec("00.B4")]["code"] = "BetaCuatro";
+        $rtnArray[\hexdec("00.B4")]["description"] = "20-12-30 Uploaded to github";
+        $rtnArray[\hexdec("00.B4")]["threshold"] = "00.B4";
         //DOING
-        $rtnArray[\hexdec("00.C0")]["code"] = "DOING";
-        $rtnArray[\hexdec("00.C0")]["description"] = "Upgraded project structure (DataDefinition\Instance)";
-        $rtnArray[\hexdec("00.C0")]["threshold"] = "00.C0";
+//        $rtnArray[\hexdec("00.C0")]["code"] = "DOING";
+//        $rtnArray[\hexdec("00.C0")]["description"] = "Upgraded project structure (DataDefinition\Instance)";
+//        $rtnArray[\hexdec("00.C0")]["threshold"] = "00.C0";
         //One
         $rtnArray[\hexdec("01.00")]["code"] = "One";
         $rtnArray[\hexdec("01.00")]["description"] = "Final version";

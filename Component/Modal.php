@@ -7,7 +7,7 @@ use GIndie\ScriptGenerator\HTML5 as HTML5;
 /**
  * 
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
- * @license file://LICENSE MIT License
+ * @license file://LICENSE
  * 
  * @since 2017-01-18
  * @version 00.B0

@@ -3,11 +3,11 @@
 /**
  * GIG-DML-HTML5-Bootstrap3 - Document 2016-12-28
  * @copyright (C) 2017 Angel Sierra Vega. Grupo INDIE.
- * @license file://LICENSE MIT License
+ * @license file://LICENSE
  *
- * @package Bootstrap3
+ * @package GIndie\ScriptGenerator\Bootstrap3
  *
- * @version 00.B0
+ * @version 00.B4
  */
 
 namespace GIndie\ScriptGenerator\Bootstrap3;
@@ -19,8 +19,7 @@ use GIndie\ScriptGenerator\HTML5;
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since GIG-BTSP3.00.00
  */
-class Document extends HTML5\Document
-{
+class Document extends HTML5\Document {
 
     /**
      * Creates a new Bootstrap3 Document object
@@ -34,12 +33,11 @@ class Document extends HTML5\Document
      * 
      * @since GIG-BTSP3.00.00
      * 
-     * @ut_str construct "<!DOCTYPE html><html lang="en"><head charset="UTF-8"><title></title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link></head><body><script>https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js</script><script integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js</script></body></html>"
+     * @ut_str construct "<!DOCTYPE html><html lang="en"><head charset="UTF-8"><title></title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="http://sndbx.d/Framework/public/assets/bootstrap33/css/bootstrap.min.css"></link><link rel="stylesheet" href="http://sndbx.d/Framework/public/assets/bootstrap33/css/bootstrap-theme.min.css"></link></head><body><script src="http://sndbx.d/Framework/public/assets/jquery/jquery.min.js"></script><script src="http://sndbx.d/Framework/public/assets/bootstrap33/js/bootstrap.min.js"></script></body></html>"
      * 
      */
     public function __construct($title, $lang = "en", $pathToCSS = \NULL, $pathToTheme = \NULL,
-                                $pathToJquery = \NULL, $pathToJS = \NULL)
-    {
+            $pathToJquery = \NULL, $pathToJS = \NULL) {
         parent::__construct($title, $lang, $doctype = "html", $charset = "UTF-8");
 
         $this->addMeta(["http-equiv" => "Content-Type", "content" => "text/html; charset=utf-8"]);
@@ -48,28 +46,32 @@ class Document extends HTML5\Document
         $this->addMeta(["name" => "viewport", "content" => "width=device-width, initial-scale=1"]);
 
         if ($pathToCSS == \NULL) {
-            $_css = $this->addLink("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", "stylesheet");
-            $_css->setAttribute("integrity", "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u");
-            $_css->setAttribute("crossorigin", "anonymous");
+            $css = $this->addLink("http://sndbx.d/Framework/public/assets/bootstrap33/css/bootstrap.min.css", "stylesheet");
+//            $css = $this->addLink("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", "stylesheet");
+//            $css->setAttribute("integrity", "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u");
+//            $css->setAttribute("crossorigin", "anonymous");
         } else {
             $this->addLink($pathToCSS, "stylesheet");
         }
         if ($pathToTheme == \NULL) {
-            $theme = $this->addLink("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css", "stylesheet");
-            $theme->setAttribute("integrity", "sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp");
-            $theme->setAttribute("crossorigin", "anonymous");
+            $theme = $this->addLink("http://sndbx.d/Framework/public/assets/bootstrap33/css/bootstrap-theme.min.css", "stylesheet");
+//            $theme = $this->addLink("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css", "stylesheet");
+//            $theme->setAttribute("integrity", "sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp");
+//            $theme->setAttribute("crossorigin", "anonymous");
         } else {
             $this->addLink($pathToTheme, "stylesheet");
         }
         if ($pathToJquery == \NULL) {
-            $this->addScript("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js", true);
+            $this->addScript("http://sndbx.d/Framework/public/assets/jquery/jquery.min.js", true);
+//            $this->addScript("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js", true);
         } else {
             $this->addScript($pathToJquery, \TRUE);
         }
         if ($pathToJS == \NULL) {
-            $_js = $this->addScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", true);
-            $_js->setAttribute("integrity", "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa");
-            $_js->setAttribute("crossorigin", "anonymous");
+            $js = $this->addScript("http://sndbx.d/Framework/public/assets/bootstrap33/js/bootstrap.min.js", true);
+//            $js = $this->addScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", true);
+//            $js->setAttribute("integrity", "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa");
+//            $js->setAttribute("crossorigin", "anonymous");
         } else {
             $this->addScript($pathToJS, \TRUE);
         }

@@ -15,7 +15,7 @@ use GIndie\ScriptGenerator\HTML5;
 use GIndie\ScriptGenerator\Bootstrap3;
 
 /**
- * @license file://LICENSE MIT License
+ * @license file://LICENSE
  * 
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
  * @since 2017-01-18

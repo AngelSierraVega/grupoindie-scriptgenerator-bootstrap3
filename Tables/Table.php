@@ -8,8 +8,8 @@ namespace GIndie\ScriptGenerator\Bootstrap3\Tables;
  * @link <https://www.w3schools.com/bootstrap/bootstrap_ref_css_tables.asp>
  *
  * @author Angel Sierra Vega <angel.sierra@grupoindie.com>
- * @copyright (c) 2018 Angel Sierra Vega. Grupo INDIE.
- * @license file://LICENSE MIT License
+ * @copyright (CC) 2020 Angel Sierra Vega. Grupo INDIE.
+ * @license file://LICENSE
  *
  * @package ScriptGenerator
  * @subpackage Bootstrap3
